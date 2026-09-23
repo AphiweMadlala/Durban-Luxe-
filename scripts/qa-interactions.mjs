@@ -134,6 +134,32 @@ const errors = [];
   check('drawer closes, results filtered', (await visibleCards(page)) === 6, String(await visibleCards(page)));
   check('filter count badge', /1/.test((await page.textContent('[data-filter-count]').catch(() => '')) || ''));
 
+  // Regression: on short phones the drawer's action bar used to sit over the Type select
+  // (the last left-column field), so tapping Type hit "Clear all" and wiped every filter.
+  {
+    const short = await browser.newContext({ viewport: { width: 390, height: 600 }, hasTouch: true, isMobile: true, reducedMotion: 'reduce' });
+    const sp = await short.newPage();
+    sp.on('pageerror', (e) => errors.push(String(e)));
+    await sp.goto(BASE + 'stays/?where=area%3Azimbali');
+    await sp.tap('[data-filters-open]');
+    await sp.waitForTimeout(200);
+    const overlap = await sp.evaluate(() => document.querySelector('.filters__actions').getBoundingClientRect().top < document.querySelector('.filters__form').getBoundingClientRect().bottom - 0.5);
+    check('drawer action bar sits below the scrolling fields', !overlap);
+    // Scroll Type to the bottom edge of the drawer (what focus / a user scroll does), then tap it.
+    await sp.$eval('#f-type', (el) => el.scrollIntoView({ block: 'end' }));
+    const box = await sp.locator('#f-type').boundingBox();
+    await sp.touchscreen.tap(box.x + 20, box.y + box.height / 2);
+    await sp.waitForTimeout(100);
+    const hit = await sp.evaluate(() => document.activeElement.id);
+    check('tapping Type in the drawer focuses Type (not "Clear all")', hit === 'f-type', hit || 'nothing');
+    check('tapping Type keeps existing filters', new URL(sp.url()).searchParams.get('where') === 'area:zimbali', new URL(sp.url()).search || '(cleared)');
+    await sp.selectOption('#f-type', 'Villa');
+    await sp.waitForTimeout(150);
+    const p = new URL(sp.url()).searchParams;
+    check('Type selection filters and updates URL', p.get('type') === 'Villa' && p.get('where') === 'area:zimbali' && (await visibleCards(sp)) < 8, `${new URL(sp.url()).search} / ${await visibleCards(sp)}`);
+    await short.close();
+  }
+
   await page.goto(BASE + 'stays/christmas-bay-beachfront-villa/');
   check('mobile gallery counter present', (await page.textContent('[data-strip-index]').catch(() => ''))?.trim() === '1');
   await page.evaluate(() => { const s = document.querySelector('[data-strip]'); s.scrollTo({ left: s.clientWidth * 2 }); });
