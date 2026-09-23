@@ -197,6 +197,49 @@
     const applyLabel = $('[data-apply-label]', col);
     const total = cards.length;
 
+    // Price range: slider + typed boxes. The number inputs (pmin/pmax) are the source of truth.
+    const pr = $('[data-price-range]', form);
+    const PMIN = +pr.dataset.min, PMAX = +pr.dataset.max;
+    const rLo = $('[data-range="min"]', pr), rHi = $('[data-range="max"]', pr);
+    const nLo = form.elements.pmin, nHi = form.elements.pmax;
+    const rand = (v) => 'R' + Number(v).toLocaleString('en-US');
+    const toNum = (v, fallback) => {
+      // Rand amounts: commas, spaces and an "R" are allowed; no cents.
+      const n = Number(String(v).replace(/[^\d]/g, ''));
+      return String(v).trim() && Number.isFinite(n) && n > 0 ? Math.min(PMAX, Math.max(PMIN, n)) : fallback;
+    };
+    const paintRange = () => {
+      const pct = (v) => ((v - PMIN) / (PMAX - PMIN)) * 100;
+      pr.style.setProperty('--lo', pct(+rLo.value) + '%');
+      pr.style.setProperty('--hi', pct(+rHi.value) + '%');
+      rLo.setAttribute('aria-valuetext', rand(rLo.value));
+      rHi.setAttribute('aria-valuetext', rand(rHi.value));
+      // When the handles meet near the top, keep the min handle reachable.
+      rLo.style.zIndex = +rLo.value > PMAX - (PMAX - PMIN) / 10 ? 3 : '';
+    };
+    const fmt = (v) => Number(v).toLocaleString('en-US');
+    const syncRanges = () => { rLo.value = toNum(nLo.value, PMIN); rHi.value = toNum(nHi.value, PMAX); paintRange(); };
+    const normalise = (edited) => {
+      let lo = toNum(nLo.value, PMIN), hi = toNum(nHi.value, PMAX);
+      if (lo > hi) { if (edited === nLo) hi = lo; else lo = hi; }
+      nLo.value = fmt(lo); nHi.value = fmt(hi);
+      syncRanges();
+    };
+    [rLo, rHi].forEach((r) => r.addEventListener('input', () => {
+      if (+rLo.value > +rHi.value) (r === rLo ? rLo : rHi).value = r === rLo ? rHi.value : rLo.value;
+      nLo.value = fmt(rLo.value); nHi.value = fmt(rHi.value);
+      paintRange();
+      commit(false);
+    }));
+    [nLo, nHi].forEach((n) => {
+      n.addEventListener('change', () => normalise(n));
+      // Typed values apply on Enter (and on leaving the box, via the form's change listener).
+      n.addEventListener('keydown', (e) => {
+        if (e.key !== 'Enter') return;
+        e.preventDefault(); normalise(n); commit();
+      });
+    });
+
     const read = () => {
       const p = new URLSearchParams(location.search);
       // accept friendly links: ?region=… or ?area=…
@@ -207,7 +250,12 @@
     const toForm = (p) => {
       form.elements.where.value = p.get('where') || '';
       if (form.elements.where.value !== (p.get('where') || '')) form.elements.where.value = '';
-      ['guests', 'bedrooms', 'price', 'type'].forEach((k) => (form.elements[k].value = p.get(k) || ''));
+      ['guests', 'bedrooms', 'type'].forEach((k) => (form.elements[k].value = p.get(k) || ''));
+      // ?price=N from older links means "up to N".
+      let lo = toNum(p.get('pmin') || '', PMIN), hi = toNum(p.get('pmax') || p.get('price') || '', PMAX);
+      if (lo > hi) lo = hi;
+      nLo.value = fmt(lo); nHi.value = fmt(hi);
+      syncRanges();
       const feats = p.getAll('feature');
       $$('input[name="feature"]', form).forEach((c) => (c.checked = feats.includes(c.value)));
       q.value = p.get('q') || '';
@@ -216,7 +264,10 @@
     const fromForm = () => {
       const p = new URLSearchParams();
       const f = form.elements;
-      ['where', 'guests', 'bedrooms', 'price', 'type'].forEach((k) => f[k].value && p.set(k, f[k].value));
+      ['where', 'guests', 'bedrooms', 'type'].forEach((k) => f[k].value && p.set(k, f[k].value));
+      const lo = toNum(nLo.value, PMIN), hi = toNum(nHi.value, PMAX);
+      if (lo > PMIN) p.set('pmin', lo);
+      if (hi < PMAX) p.set('pmax', hi);
       $$('input[name="feature"]:checked', form).forEach((c) => p.append('feature', c.value));
       if (q.value.trim()) p.set('q', q.value.trim());
       if (sort.value) p.set('sort', sort.value);
@@ -227,7 +278,8 @@
     const apply = (p) => {
       const where = p.get('where') || '';
       const [wk, wv] = where.split(':');
-      const g = +p.get('guests') || 0, b = +p.get('bedrooms') || 0, pr = +p.get('price') || 0, t = p.get('type') || '';
+      const g = +p.get('guests') || 0, b = +p.get('bedrooms') || 0, t = p.get('type') || '';
+      const lo = +p.get('pmin') || 0, hi = +p.get('pmax') || +p.get('price') || 0;
       const feats = p.getAll('feature');
       const terms = norm(p.get('q') || '').split(/\s+/).filter(Boolean);
       let shown = 0;
@@ -235,7 +287,7 @@
         const d = c.dataset;
         const ok =
           (!wk || (wk === 'region' ? d.region === wv : d.area === wv)) &&
-          (+d.guests >= g) && (+d.bedrooms >= b) && (!pr || (d.price && +d.price <= pr)) && (!t || d.type === t) &&
+          (+d.guests >= g) && (+d.bedrooms >= b) && (!lo || (d.price && +d.price >= lo)) && (!hi || (d.price && +d.price <= hi)) && (!t || d.type === t) &&
           feats.every((f) => d.features.split(' ').includes(f)) &&
           terms.every((term) => norm(d.search).includes(term));
         c.hidden = !ok;
@@ -245,7 +297,9 @@
       const key = { 'price-asc': (c) => +c.dataset.price, 'price-desc': (c) => -c.dataset.price, 'guests-desc': (c) => -c.dataset.guests }[s] || ((c) => +c.dataset.order);
       [...cards].sort((a, z) => key(a) - key(z) || a.dataset.order - z.dataset.order).forEach((c) => list.append(c));
 
-      const active = [...p.keys()].filter((k) => !['sort', 'q'].includes(k)).length + (p.getAll('feature').length > 1 ? p.getAll('feature').length - 1 : 0);
+      // pmin + pmax count as one "price" filter.
+      const keys = [...p.keys()].filter((k) => !['sort', 'q'].includes(k)).map((k) => (k === 'pmin' || k === 'pmax' ? 'price' : k));
+      const active = new Set(keys.filter((k) => k !== 'feature')).size + p.getAll('feature').length;
       countBadge.hidden = !active; countBadge.textContent = active;
       const whereLabel = where ? form.elements.where.selectedOptions[0]?.textContent.replace(/\s*\(\d+\)$/, '').replace(/^All of /, '') : '';
       status.textContent = shown === total ? `Showing all ${total} stays` : `Showing ${shown} of ${total} stays${whereLabel ? ` in ${whereLabel}` : ''}`;
@@ -271,7 +325,7 @@
     form.addEventListener('submit', (e) => e.preventDefault());
     q.form?.addEventListener?.('submit', (e) => e.preventDefault());
     $$('[data-filters-reset]', col).forEach((btn) => btn.addEventListener('click', (e) => {
-      e.preventDefault(); form.reset(); q.value = ''; sort.value = ''; commit();
+      e.preventDefault(); form.reset(); q.value = ''; sort.value = ''; syncRanges(); commit();
     }));
     addEventListener('popstate', () => { toForm(read()); apply(read()); });
 

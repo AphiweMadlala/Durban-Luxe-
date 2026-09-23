@@ -13,7 +13,9 @@ export function stays(ctx) {
   // Only offer thresholds that actually split the dataset.
   const guestSteps = [6, 8, 10, 12, 14].filter((g) => P.some((p) => p.guests >= g));
   const bedSteps = [2, 3, 4, 5, 6].filter((b) => P.some((p) => p.bedrooms >= b));
-  const priceSteps = [4000, 5000, 7000, 10000].filter((v) => P.some((p) => p.priceFromZAR <= v));
+  // Price range bounds come from the published "from" rates, rounded out to the nearest R500.
+  const rates = P.map((p) => p.priceFromZAR).filter(Boolean);
+  const pLo = Math.floor(Math.min(...rates) / 500) * 500, pHi = Math.ceil(Math.max(...rates) / 500) * 500;
   const types = [...new Set(P.map((p) => p.propertyType))].sort();
   const features = FEATURE_FILTERS.map((f) => ({ ...f, count: P.filter(f.test).length })).filter((f) => f.count >= 3);
   const order = ctx.featuredOrder;
@@ -75,7 +77,20 @@ export function stays(ctx) {
       </div>
       ${sel('guests', 'Guests', guestSteps.map((g) => `<option value="${g}">${g}+ guests</option>`).join(''))}
       ${sel('bedrooms', 'Bedrooms', bedSteps.map((b) => `<option value="${b}">${b}+ bedrooms</option>`).join(''))}
-      ${sel('price', 'Nightly rate', priceSteps.map((v) => `<option value="${v}">Up to R${v.toLocaleString('en-US')}</option>`).join(''), 'Any rate')}
+      <fieldset class="field field--price" data-price-range data-min="${pLo}" data-max="${pHi}">
+        <legend>Nightly rate <span class="field__opt">(from)</span></legend>
+        <div class="range__inputs">
+          <label class="range__box"><span>Min</span><span class="range__cur" aria-hidden="true">R</span><input id="f-pmin" name="pmin" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" value="${pLo.toLocaleString('en-US')}" aria-describedby="f-price-hint"></label>
+          <span class="range__dash" aria-hidden="true">to</span>
+          <label class="range__box"><span>Max</span><span class="range__cur" aria-hidden="true">R</span><input id="f-pmax" name="pmax" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" value="${pHi.toLocaleString('en-US')}" aria-describedby="f-price-hint"></label>
+        </div>
+        <div class="range">
+          <div class="range__track"><span class="range__fill"></span></div>
+          <input type="range" min="${pLo}" max="${pHi}" step="100" value="${pLo}" aria-label="Minimum nightly rate" data-range="min">
+          <input type="range" min="${pLo}" max="${pHi}" step="100" value="${pHi}" aria-label="Maximum nightly rate" data-range="max">
+        </div>
+        <p class="visually-hidden" id="f-price-hint">Type an amount between R${pLo.toLocaleString('en-US')} and R${pHi.toLocaleString('en-US')} and press Enter.</p>
+      </fieldset>
       ${sel('type', 'Type', types.map((t) => `<option value="${esc(t)}">${esc(t)}</option>`).join(''), 'Any type')}
       <fieldset class="field field--features">
         <legend>Features</legend>

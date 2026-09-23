@@ -112,7 +112,7 @@ Fluid scale (tokens in `:root`, all `clamp()`):
 
 **Property card** — square image → LOCATION · TYPE meta → name (Cormorant 600) → "8 guests · 4 bedrooms · 4 baths" (small, muted) → up to 2 bronze differentiators → price on its own hairline at the card foot. Whole card is one link. `card--compact` (home companions) drops the differentiators so the lead stay keeps the hierarchy.
 
-**Filters** — desktop: search + sort row, then Location (region → area), Guests, Bedrooms, Nightly rate, Type, and feature chips (Private pool, Sea view, Beach access, Beachfront), each generated from the dataset; mobile: "Filters (n)" button opens a bottom drawer (dialog) with the same controls and a "Show n stays" button. All state is in the URL query.
+**Filters** — desktop: search + sort row, then Location (region → area), Guests, Bedrooms, Nightly rate (a min–max range: two typed boxes that accept "6,500" / "R6500" and apply on Enter or blur, over a two-handle slider in R100 steps with square ink handles on a hairline track; bounds come from the data; URL `pmin`/`pmax`, legacy `price` = max), Type, and feature chips (Private pool, Sea view, Beach access, Beachfront), each generated from the dataset; mobile: "Filters (n)" button opens a bottom drawer (dialog) with the same controls and a "Show n stays" button. All state is in the URL query.
 
 **Forms** — label above input; 48px inputs; 1px `--line` border, ink on focus, 2px bronze focus ring offset 2px. Helper text below. Enquiry forms never say "available"; submit label is "Check availability" and the helper says it opens WhatsApp.
 
