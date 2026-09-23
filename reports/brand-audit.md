@@ -45,7 +45,7 @@ Every point is marked **EXISTING** (observed on Instagram) or **INTERPRETATION**
 |---|---|
 | UI palette = white `#FCFCFB` / ink `#141413` / bronze `#6C5424`; blue and green only ever come from photos | Logo colours; feed has no other brand colours |
 | Bronze is used only for hairlines, the diamond motif, feature tags, focus rings and the primary button's hover state; never large fills or gradients | Logo uses bronze as a thin frame only |
-| Display font **Marcellus** (flared glyphic serif) | Closest open-licence match to the wordmark's terminals |
+| Display font **Cormorant Garamond** (classical glyphic serif, variable weight; replaced Marcellus in the typography pass) | Shares the wordmark's classical lineage; its weight range gives each serif role its own voice |
 | Body font **Hanken Grotesk** | Quiet, legible support that doesn't compete with the serif |
 | Radius 0, square photos, square buttons | Square Instagram frames + diamond/line geometry of the logo |
 | Diamond ornament as list bullets and one divider | The nested-diamond ornament in the logo |

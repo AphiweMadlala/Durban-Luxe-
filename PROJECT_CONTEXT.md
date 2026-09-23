@@ -69,7 +69,7 @@ reports/                research, brand, media, listing and QA reports
 
 ## 8. Design philosophy
 
-The photography is the hero and the logo is the frame: white, ink and bronze UI, Marcellus + Hanken Grotesk, square photos, no boxes or ornament beyond the logo's diamond. Full system in `DESIGN.md`; how it was derived in `reports/brand-audit.md`.
+The photography is the hero and the logo is the frame: white, ink and bronze UI, Cormorant Garamond + Hanken Grotesk, square photos, no boxes or ornament beyond the logo's diamond. Full system in `DESIGN.md`; how it was derived in `reports/brand-audit.md`.
 
 ## 9. Proposal mode
 

@@ -32,7 +32,7 @@ ${ogImage ? `<meta property="og:image" content="${esc(config.siteUrl + ogImage)}
 <meta name="theme-color" content="#FCFCFB" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#121211" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="${base}favicon.svg" type="image/svg+xml">
-<link rel="preload" href="${base}fonts/marcellus-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="${base}fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="${base}fonts/hanken-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 ${preload}
 <link rel="stylesheet" href="${base}css/site.css?v=${ctx.version}">
@@ -69,10 +69,13 @@ ${config.proposalMode ? `<div class="proposal-bar" role="note">Website proposal 
 ${body}
 </main>
 <footer class="site-footer">
+  <div class="container site-footer__top">
+    <p class="site-footer__line">Luxury holiday homes in Durban, South Africa.</p>
+    <img src="${base}images/brand/logo-full.png" alt="Durban Luxe" width="140" height="140" loading="lazy" class="site-footer__logo">
+  </div>
   <div class="container site-footer__grid">
     <div class="site-footer__brand">
-      <img src="${base}images/brand/logo-full.png" alt="Durban Luxe" width="140" height="140" loading="lazy" class="site-footer__logo">
-      <p>Luxury holiday homes in Durban, South Africa.<br>Beachfront villas, family getaways and event stays.</p>
+      <p>Beachfront villas, family getaways and event stays, with personal concierge service.</p>
     </div>
     <div>
       <h2 class="label">Stay</h2>

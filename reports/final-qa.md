@@ -85,7 +85,7 @@ Tested areas: filters (location hierarchy, guests, bedrooms, rate, type, feature
 | Area | Assessment |
 |---|---|
 | Brand authenticity | Strong. Every visual element traces to the logo or the feed (see `brand-audit.md`) |
-| Typography | Marcellus + Hanken Grotesk hierarchy is clear. One serif weight; size and space do the work |
+| Typography | (Superseded by the later typography pass: Cormorant Garamond + Hanken Grotesk, see DESIGN.md §3) |
 | Palette | Disciplined. Bronze is kept to hairlines, the diamond motif and feature tags |
 | Image treatment | Photography leads every page; square native crops; hand-picked heroes |
 | Cards / boxes | Cards are image + text on the page ground, with no borders. The only boxed element is the booking panel, which earns it |

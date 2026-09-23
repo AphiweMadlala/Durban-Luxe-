@@ -38,7 +38,7 @@ export function specs(p, { withIcons = false } = {}) {
     p.bedrooms != null && [`bed`, `${p.bedrooms} bedroom${p.bedrooms === 1 ? '' : 's'}`],
     p.bathrooms != null && [`bathtub`, `${fmtNum(p.bathrooms)} bath${p.bathrooms === 1 ? '' : 's'}`],
   ].filter(Boolean);
-  return `<ul class="specs" role="list">${items
+  return `<ul class="specs${withIcons ? ' specs--icons' : ''}" role="list">${items
     .map(([ic, t]) => `<li>${withIcons ? icon(ic) : ''}${esc(t)}</li>`)
     .join('')}</ul>`;
 }
@@ -69,10 +69,11 @@ export function differentiators(p, n = 2) {
   return out.slice(0, n);
 }
 
-export function card(base, p, { sizes = '(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 92vw', eager = false, headingLevel = 3 } = {}) {
+export function card(base, p, { sizes = '(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 92vw', eager = false, headingLevel = 3, compact = false } = {}) {
   const h = heroImage(p);
-  const diffs = differentiators(p);
-  return `<article class="card">
+  // Compact cards (home-page companions) drop the differentiators so the lead item keeps the hierarchy.
+  const diffs = compact ? [] : differentiators(p);
+  return `<article class="card${compact ? ' card--compact' : ''}">
   <a class="card__link" href="${base}stays/${p.slug}/">
     <div class="card__media">${img(base, h, { alt: `${p.name}, ${placeName(p)}`, sizes, eager })}</div>
     <p class="card__place">${esc(placeName(p))}<span aria-hidden="true"> · </span><span class="visually-hidden">, </span>${esc(p.propertyType)}</p>

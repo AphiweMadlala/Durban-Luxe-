@@ -45,30 +45,44 @@ Rules:
 ## 3. Typography
 
 *Existing:* the wordmark is classical capitals with flared, glyphic terminals (Trajan/Cinzel family feel).
-*Interpretation:* **Marcellus** (flared glyphic serif, closest open-licence match to the wordmark's terminals)
-for display; **Hanken Grotesk** (quiet humanist grotesk) for everything functional.
+*Interpretation:* **Cormorant Garamond** (variable 300–700, self-hosted WOFF2) for the editorial voice: it shares the
+wordmark's classical, glyphic lineage and has a real weight range, so each serif role differs in weight as well as size.
+**Hanken Grotesk** (quiet humanist grotesk) for everything functional. Instrument Serif was tested and rejected:
+condensed and fashion-led, it fights the wide classical wordmark and gets cramped at card size.
 
-| Role | Font | Size (clamp) | Case / tracking | Weight |
-|---|---|---|---|---|
-| Display XL (home hero) | Marcellus | 2.5 → 4.25rem | Sentence case, -0.01em | 400 |
-| H1 (property name) | Marcellus | 2.1 → 3.25rem | Sentence case | 400 |
-| H2 (section) | Marcellus | 1.6 → 2.4rem | Sentence case | 400 |
-| H3 / card name | Marcellus | 1.2 → 1.4rem | Sentence case | 400 |
-| Label | Hanken Grotesk | 0.75rem | UPPERCASE, 0.14em | 500 |
-| Body | Hanken Grotesk | 1rem / 1.065rem | 1.65 line-height, ≤ 64ch | 400 |
-| Small / meta | Hanken Grotesk | 0.875rem | — | 400/500 |
-| Price | Hanken Grotesk | 1rem–1.35rem | tabular nums | 600 |
+Fluid scale (tokens in `:root`, all `clamp()`):
 
-- Marcellus has one weight: hierarchy comes from size and space, never bold serif.
-- Uppercase labels are rationed (≤ 1 per 3 sections on the homepage). The logo already owns the capitals voice.
+| Role | Token | Font | Size (≈375 → 1440px) | Weight | Line-height / tracking |
+|---|---|---|---|---|---|
+| Display (home hero only) | `--t-display` | Cormorant | 3.1 → 5.9rem | 400 | .94 / -0.028em, one `display__line` per phrase, never re-wrapped |
+| Statement (brand line, enquiry close, footer) | `--t-statement` | Cormorant | 2.4 → 4.6rem | 400 | 1 / -0.022em |
+| H1 (page / property title) | `--t-h1` | Cormorant | 2.6 → 4.5rem | 400 | 1 / -0.022em |
+| Feature title (lead + featured property) | `--t-feature` | Cormorant | 2.3 → 3.9rem | 400 | 1 / -0.02em |
+| H2 (section heading) | `--t-h2` | Cormorant | 2.1 → 3.5rem | 400 | 1.02 / -0.018em |
+| H3 (sub-section, coast name, why-claim) | `--t-h3` | Cormorant | 1.6 → 2.1rem | 500 (claims 400) | 1.1 |
+| Card title | `--t-card` | Cormorant | 1.35 → 1.55rem | **600** | 1.12 |
+| Lede | `--t-lede` | Hanken | 1.06 → 1.25rem | 400 | 1.55, ≤ 42ch |
+| Body | `--t-body` | Hanken | 1 → 1.0625rem | 400 | 1.65, ≤ 64ch |
+| Specs / small | `--t-small` | Hanken | .875rem | 400 | "10 guests · 5 bedrooms · 6 baths" |
+| Meta / label (location · type) | `--t-meta` | Hanken | .75rem | 500 | UPPERCASE, 0.1–0.12em, muted |
+| Price | — | Hanken | .9375–1.125rem | 600 figure, 400 "From … / night" | tabular lining nums |
+
+- Serif steps down in size and **up** in weight: small Cormorant is never thin.
+- `text-wrap: balance` on all serif headings; `max-width` in `ch` on titles (property H1 16ch, statement 24ch, enquiry close 9ch).
+- No eyebrow labels above headings. The meta label on cards and features is location/type data, not a kicker.
 - No italics for decoration, no giant quote marks, no em-dashes in UI copy.
 
 ## 4. Grid & spacing
 
-- Container: `min(100% - 2*gutter, 1320px)`; gutter `clamp(1rem, 4vw, 2.5rem)`.
-- 12-column grid on ≥ 1024px, 6 on tablet, single column < 768px.
-- Space scale (rem): 0.25 · 0.5 · 0.75 · 1 · 1.5 · 2 · 3 · 4 · 6 · 8.
-- Section rhythm: `clamp(4rem, 9vw, 8rem)` vertical padding.
+- Container: `min(100% - 2*gutter, 1320px)`; gutter `clamp(1rem, 4vw, 2.5rem)`; column gap `--col-gap` `clamp(1rem, 2.2vw, 2rem)`.
+- 12-column editorial grid on desktop. Section compositions use it deliberately:
+  hero copy 5 / photo 7 bleeding to the viewport edge (6/6 at 1024–1279); signature lead 7 + companions 5;
+  statement title 10, body offset to cols 7–12; coasts 7 | gap | 4 staggered down; featured photo 7 | gap | text 4;
+  why heading 4 (sticky) | claims 7; views mosaic 8 + 4 stacked, then 4/4/4; enquiry close 5 | form 6; footer line 8 + logo.
+- Section heads: plain (`.section-head`) or split (`.section-head--split`: heading cols 1–7, context sentence/action cols 9–12, baseline-aligned).
+- Vertical rhythm: `--section-lg` (5.5 → 11rem) for editorial transitions (statement, featured, enquiry close);
+  `--section` (4.5 → 8.5rem) default; `--section-sm` (3.5 → 5.5rem) for catalogue/utility (collection rail, related, footer top);
+  `--head-gap` (1.75 → 3.25rem) between a heading and its content. Card and control spacing stays in rem steps under 1.25rem.
 
 ## 5. Shape, elevation, ornament
 
@@ -96,7 +110,7 @@ for display; **Hanken Grotesk** (quiet humanist grotesk) for everything function
 
 **Navigation** — 72px bar, logo wordmark left, 3 links + WhatsApp right. Mobile: wordmark + menu button → full-height sheet. Sticky with hairline bottom after scroll. `aria-current="page"` on active.
 
-**Property card** — square image → area / type label → name (Marcellus) → "8 guests · 4 bedrooms · 4 baths" → up to 2 differentiators → price line. Whole card is one link.
+**Property card** — square image → LOCATION · TYPE meta → name (Cormorant 600) → "8 guests · 4 bedrooms · 4 baths" (small, muted) → up to 2 bronze differentiators → price on its own hairline at the card foot. Whole card is one link. `card--compact` (home companions) drops the differentiators so the lead stay keeps the hierarchy.
 
 **Filters** — desktop: search + sort row, then Location (region → area), Guests, Bedrooms, Nightly rate, Type, and feature chips (Private pool, Sea view, Beach access, Beachfront), each generated from the dataset; mobile: "Filters (n)" button opens a bottom drawer (dialog) with the same controls and a "Show n stays" button. All state is in the URL query.
 
@@ -106,7 +120,11 @@ for display; **Hanken Grotesk** (quiet humanist grotesk) for everything function
 
 **Mobile action bar** — fixed bottom on property pages < 1024px: two-line price left ("R15,000 / night" over "From · excl. VAT"), WhatsApp icon button, "Check availability". Content gets matching bottom padding.
 
-**Claim rows** (home "Why stay") — never big-number stat tiles. Each row: a Marcellus claim beside its verified fact in muted body text, hairline-separated, ink rule on top.
+**Claim rows** (home "Why stay") — never big-number stat tiles. Each row: a Cormorant claim at H3 size beside its verified fact in small muted text, hairline-separated, ink rule on top.
+
+**Destination index** (home coasts) — areas are a typographic list, not chips: name left, "n stays" right, hairlines between, ink rule on top.
+
+**Footer** — an editorial endpoint: the bio line set at H2 size with the diamond logo, an ink rule, then the Stay / Contact index, then the small print.
 
 **No eyebrow labels** above headings. The heading carries the section.
 
