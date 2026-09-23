@@ -14,7 +14,7 @@ node scripts/qa.mjs --shots     # browser sweep (needs Playwright's Chromium)
 node scripts/qa-interactions.mjs
 ```
 
-**Deploying (GitHub Pages, from a branch):** `npm run deploy` builds the site into `docs/` with the `/Durban-Luxe-/` base path. Commit `docs/` and push `main`; Pages is set to **Deploy from a branch → main → /docs**. `dist/` stays a local, uncommitted preview build (`npm run build && npm run serve`).
+**Deploying (GitHub Pages, from a branch):** Pages publishes `main` / root. `npm run deploy` builds the site into `docs/` with the base path `/Durban-Luxe-/docs/`, and the root `index.html` redirects there (root `.nojekyll` skips Jekyll). Commit and push `main`. If Pages is later switched to **main → /docs**, change `BASE`/`SITE_URL` in the `deploy` script to `/Durban-Luxe-/` and delete the root `index.html`. `dist/` stays a local, uncommitted preview build (`npm run build && npm run serve`).
 
 ## 1. Source hierarchy
 
