@@ -141,13 +141,6 @@ export function property(ctx, p) {
     </aside>
   </div>
 
-  <section class="section-sm container all-photos" aria-labelledby="photos-title">
-    <h2 id="photos-title" class="h3">All photos <span class="muted">(${n})</span></h2>
-    <ul class="all-photos__grid" role="list">
-      ${ordered.map((im, i) => `<li><button type="button" data-open-lightbox="${i}" aria-label="Open photo ${i + 1} of ${n} full screen">${img(base, im, { alt: altFor(im, i), sizes: '(min-width: 1024px) 24vw, (min-width: 640px) 32vw, 50vw' })}</button></li>`).join('')}
-    </ul>
-  </section>
-
   <section class="section-sm container" aria-labelledby="rel-title">
     <h2 id="rel-title" class="h2">${esc(relTitle)}</h2>
     <ul class="related" role="list">${picks.map((o) => `<li>${card(base, o)}</li>`).join('')}</ul>

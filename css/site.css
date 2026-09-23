@@ -512,10 +512,6 @@ div.section-head__aside { display: grid; gap: .75rem; justify-items: start; }
   .booking { padding: 1.25rem; border-inline: 0; margin-inline: calc(-1 * var(--gutter)); }
 }
 
-.all-photos__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 1.5rem; }
-.all-photos__grid button { display: block; width: 100%; padding: 0; border: 0; cursor: zoom-in; background: var(--surface); }
-.all-photos__grid img { width: 100%; aspect-ratio: 1; object-fit: cover; }
-@media (max-width: 767px) { .all-photos__grid { grid-template-columns: repeat(3, 1fr); gap: 3px; } }
 .related { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem var(--col-gap); margin-top: var(--head-gap); }
 @media (max-width: 1023px) { .related { grid-template-columns: repeat(2, minmax(0, 1fr)); } .related li:nth-child(3) { display: none; } }
 @media (max-width: 600px) { .related { grid-template-columns: 1fr; } .related li:nth-child(3) { display: block; } }
