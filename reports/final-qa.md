@@ -117,3 +117,30 @@ Tested areas: filters (location hierarchy, guests, bedrooms, rate, type, feature
 - Screen readers (structure, labels, live region and focus were tested programmatically, not with VoiceOver/NVDA).
 - Dark mode was not visually reviewed.
 - A real WhatsApp send. The test intercepts the `wa.me` URL and never sends.
+
+---
+
+# Proposal-polish pass (2026-09-23)
+
+Goal: make the proposal read as Durban Luxe's own finished website, with no redesign and no new features.
+
+## Changes
+
+| Area | Change |
+|---|---|
+| Brand voice | Guest-facing copy moved to first person: "We'll confirm availability and the current rate", "Tell us your dates", "Contact us directly", "We confirm / We reply…", "Ask us when you enquire", "We don't publish street addresses", "Send us your dates and group size and we'll confirm…", "tell us what you need and we'll suggest something". The brand name stays in headings, navigation, SEO metadata, schema.org, Instagram references and the drafted WhatsApp message (which is written in the guest's voice). |
+| Proposal UI | Removed the visible "Website proposal for Durban Luxe…" banner and the footer "Proposal preview. Not indexed by search engines." line. `PROPOSAL_MODE` is still on: every page keeps `noindex, nofollow`, and `robots.txt` is `Disallow: /`. |
+| Property provenance | Removed the visible "Listed by Durban Luxe on Instagram, [date]. See the original post" line from property pages. Provenance is unchanged in `data/properties.json`, `data/instagram-posts.json`, `data/media-manifest.json` and the research/reconciliation reports. |
+| Public URL | The site is now published at the repo root (Pages source: `main` / root) and served directly at `https://aphiwemadlala.github.io/Durban-Luxe-/`. The `docs/` build and the root meta-refresh redirect are gone. The new `scripts/deploy-pages.mjs` (`npm run deploy`) builds with base `/Durban-Luxe-/` and publishes only its own files, tracked in `.pages-manifest.json`, with a guard against touching source folders. |
+| Structured data | Removed the homepage `PostalAddress` (Durban Luxe publishes no business address). The `LodgingBusiness` object keeps name, description, URL, WhatsApp number as telephone, Instagram `sameAs`, `areaServed` and logo. Property `VacationRental` data keeps only the area-level locality from the listing (e.g. Salt Rock, Zimbali). |
+| Concierge positioning | The homepage statement now carries the bio's "Personal concierge service, and a direct line to us on WhatsApp." as a serif line under a rule, beside the collection summary. The hero says "with our personal concierge service"; the Why row reads "Our own service. Every enquiry comes straight to us on WhatsApp." No specific concierge services are claimed. |
+
+Unchanged on purpose: the enquiry model (dates, guests, WhatsApp draft, confirmation language), the design system, all data, and the honest handling of the client-confirmation gaps listed in `research-audit.md`.
+
+## Verification
+
+- `npm run validate`: OK (31 properties, 478 images × 3 sizes, 72 amenities; the same 15 known warnings).
+- The published output was served under `/Durban-Luxe-/` (same path as GitHub Pages) and tested there:
+  - `scripts/qa.mjs`: 100 page × width checks (all 36 pages at 375 and 1440 px, key pages at 390/430/768/1024), **0 problems**: no overflow, broken images or console errors, one `h1` each, all 200s; **113 internal links, 0 broken**; `noindex, nofollow` on every page.
+  - `scripts/qa-interactions.mjs`: **36/36 pass** (filters, URL state, back/forward, search, lightbox keyboard/focus/scroll lock, WhatsApp draft, mobile menu, filter drawer, gallery strip, action bar).
+- Programmatic scan of all 36 generated HTML files: **no** "Website proposal", "Proposal preview", "Listed by Durban Luxe", "original post", `/docs/`, meta refresh, "they'll", "Durban Luxe will", "Durban Luxe confirms", "Ask Durban Luxe" or "Contact Durban Luxe". Canonical URLs, `og:image`, `sitemap.xml` and JSON-LD URLs all resolve under `https://aphiwemadlala.github.io/Durban-Luxe-/`.

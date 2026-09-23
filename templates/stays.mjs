@@ -41,7 +41,7 @@ export function stays(ctx) {
   const body = `
 <section class="page-head container">
   <h1 class="h1">Stays</h1>
-  <p class="lede">${P.length} holiday homes between Umhlanga and Christmas Bay. Every rate is a published "from" price per night; Durban Luxe confirms dates and the current rate on WhatsApp.</p>
+  <p class="lede">${P.length} holiday homes between Umhlanga and Christmas Bay. Every rate is a published "from" price per night; we confirm dates and the current rate on WhatsApp.</p>
 </section>
 
 <div class="container collection" data-collection>
@@ -94,7 +94,7 @@ export function stays(ctx) {
   <ul class="results" role="list" data-results>${cards}</ul>
   <div class="empty" data-empty hidden>
     <h2 class="h3">No stays match those filters</h2>
-    <p>Try a different area or fewer features. Or tell Durban Luxe what you need and they'll suggest something.</p>
+    <p>Try a different area or fewer features. Or tell us what you need and we'll suggest something.</p>
     <div class="btn-row"><button class="btn btn--primary" type="button" data-filters-reset>Clear filters</button><a class="btn btn--ghost" href="${base}enquire/">Enquire</a></div>
   </div>
 </div>`;

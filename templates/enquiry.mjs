@@ -48,7 +48,7 @@ export function enquiryForm(ctx, { property = null, properties = [], id = 'enqui
     </div>`}
   </div>
   <button class="btn btn--primary btn--block" type="submit">Check availability</button>
-  <p class="enquiry__note" id="${id}-note">${icon('whatsapp-logo')} Opens WhatsApp with your dates filled in, ready to send to Durban Luxe. They'll confirm availability and the current rate. Nothing is booked or sent until you press send.</p>
-  <noscript><p class="enquiry__note"><a href="${waLink(business, property ? `Hi Durban Luxe, I'm interested in ${property.name}.` : 'Hi Durban Luxe, I would like to enquire about a stay.')}">Message Durban Luxe on WhatsApp</a></p></noscript>
+  <p class="enquiry__note" id="${id}-note">${icon('whatsapp-logo')} Opens WhatsApp with your dates filled in, ready to send to us. We'll confirm availability and the current rate. Nothing is booked or sent until you press send.</p>
+  <noscript><p class="enquiry__note"><a href="${waLink(business, property ? `Hi Durban Luxe, I'm interested in ${property.name}.` : 'Hi Durban Luxe, I would like to enquire about a stay.')}">Message us on WhatsApp</a></p></noscript>
 </form>`;
 }

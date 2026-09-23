@@ -14,7 +14,7 @@ node scripts/qa.mjs --shots     # browser sweep (needs Playwright's Chromium)
 node scripts/qa-interactions.mjs
 ```
 
-**Deploying (GitHub Pages, from a branch):** Pages publishes `main` / root. `npm run deploy` builds the site into `docs/` with the base path `/Durban-Luxe-/docs/`, and the root `index.html` redirects there (root `.nojekyll` skips Jekyll). Commit and push `main`. If Pages is later switched to **main → /docs**, change `BASE`/`SITE_URL` in the `deploy` script to `/Durban-Luxe-/` and delete the root `index.html`. `dist/` stays a local, uncommitted preview build (`npm run build && npm run serve`).
+**Deploying (GitHub Pages, from a branch):** Pages publishes `main` / (root), and the site is served at `https://aphiwemadlala.github.io/Durban-Luxe-/`. `npm run deploy` (`scripts/deploy-pages.mjs`) builds into `.pages-build/` with base `/Durban-Luxe-/`, then publishes to the repo root: `index.html`, `404.html`, `about/`, `enquire/`, `stays/`, `css/`, `js/`, `fonts/`, `images/`, `favicon.svg`, `robots.txt`, `sitemap.xml`. It only removes the entries listed in `.pages-manifest.json` from the previous publish, and aborts if a generated name would collide with a source path (`data/`, `public/`, `scripts/`, `templates/`, …). Commit and push `main` after deploying. **Edit `public/` and `templates/`, never the published copies at the root.** `dist/` stays a local, uncommitted preview build (`npm run build && npm run serve`).
 
 ## 1. Source hierarchy
 
@@ -73,7 +73,7 @@ The photography is the hero and the logo is the frame: white, ink and bronze UI,
 
 ## 9. Proposal mode
 
-`PROPOSAL_MODE` (default on; `PROPOSAL_MODE=false npm run build` to disable) adds `<meta name="robots" content="noindex, nofollow">` to every page, `Disallow: /` to `robots.txt`, and a slim banner saying this is a proposal. No analytics or third-party scripts are included.
+`PROPOSAL_MODE` (default on; `PROPOSAL_MODE=false npm run build` to disable) adds `<meta name="robots" content="noindex, nofollow">` to every page and `Disallow: /` to `robots.txt`. Nothing about proposal mode is visible on the pages themselves. No analytics or third-party scripts are included.
 
 ## 10. Known limitations
 

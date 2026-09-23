@@ -15,7 +15,6 @@ const AMENITY_ICONS = {
 const SERVICE_ICONS = { 'host-greets': 'hand-waving', 'self-check-in': 'key', lockbox: 'lock-key', 'luggage-dropoff': 'suitcase-rolling', housekeeping: 'broom', 'long-stays': 'calendar-blank', 'pets-allowed': 'paw-print', 'building-staff': 'users-three' };
 
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const longDate = (iso) => { const [y, m, d] = iso.split('-').map(Number); return `${d} ${MONTHS[m - 1]} ${y}`; };
 const monthYear = (iso) => { const [y, m] = iso.split('-').map(Number); return `${MONTHS[m - 1]} ${y}`; };
 const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 const cleanService = (s) => cap(s.replace(/\s*\(\s*/g, ' (').replace(/\(\s*/g, '(').replace(/\s+/g, ' ').replace(/^-/, '').trim());
@@ -59,7 +58,7 @@ export function property(ctx, p) {
     ['Pets', svc('pets-allowed') ? 'Pets allowed' : null],
     ['Luggage', svc('luggage-dropoff') ? 'Luggage drop-off available' : null],
     ['Guests', p.guestsNote && !/^Published/.test(p.guestsNote) ? p.guestsNote.replace(/, as stated.*$/, '') : null],
-    ['Check-in times and house rules', 'Not published. Ask Durban Luxe when you enquire.'],
+    ['Check-in times and house rules', 'Ask us when you enquire.'],
   ].filter(([, v]) => v);
 
   const waText = `Hi Durban Luxe, I'm interested in ${p.name} (${p.area}).\n\nCheck-in:\nCheck-out:\nGuests:\n\nCould you please confirm availability and pricing?`;
@@ -128,10 +127,8 @@ export function property(ctx, p) {
           <div><dt>Coast</dt><dd><a class="text-link" href="${base}stays/?region=${ctx.regionId(p.region)}">${esc(p.region)}</a>, KwaZulu-Natal</dd></div>
           ${p.nearby.map((x) => `<div><dt>Getting there</dt><dd>${esc(x.replace(/\s*\(as stated by Durban Luxe\)/, ''))}</dd></div>`).join('')}
         </dl>
-        <p class="muted small">Durban Luxe doesn't publish street addresses. Ask for the exact location when you enquire.</p>
+        <p class="muted small">We don't publish street addresses. Ask us for the exact location when you enquire.</p>
       </section>
-
-      <p class="provenance small muted">${icon('instagram-logo')} Listed by Durban Luxe on Instagram, ${longDate(p.pricePublishedAt)}. <a class="text-link" href="${p.sourceUrls[0]}" rel="noopener" target="_blank">See the original post</a></p>
     </div>
 
     <aside class="property__aside" aria-labelledby="enquiry-title">
@@ -159,7 +156,7 @@ export function property(ctx, p) {
   <section class="section-sm container final-cta" aria-labelledby="final-title">
     ${diamond('diamond--lg')}
     <h2 id="final-title" class="h2">Planning a stay at ${esc(p.name)}?</h2>
-    <p>Send your dates and group size. Durban Luxe will confirm availability and the current rate on WhatsApp.</p>
+    <p>Send us your dates and group size and we'll confirm availability and the current rate on WhatsApp.</p>
     <div class="btn-row btn-row--center">
       <a class="btn btn--primary" href="#check-availability" data-jump-enquiry>Check availability</a>
       <a class="btn btn--ghost" href="${waLink(business, waText)}" rel="noopener" target="_blank">${icon('whatsapp-logo')}<span>WhatsApp</span></a>

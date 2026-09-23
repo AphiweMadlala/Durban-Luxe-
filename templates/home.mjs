@@ -31,7 +31,7 @@ export function home(ctx) {
   <div class="container home-hero__grid">
     <div class="home-hero__copy reveal">
       <h1 class="display"><span class="display__line">Holiday homes</span> <span class="display__line">on the</span> <span class="display__line">Durban coast</span></h1>
-      <p class="lede">Beachfront villas, family getaways and event stays from Umhlanga to Christmas Bay, with personal concierge service.</p>
+      <p class="lede">Beachfront villas, family getaways and event stays from Umhlanga to Christmas Bay, with our personal concierge service.</p>
       <div class="btn-row">
         <a class="btn btn--primary" href="${base}stays/">Explore stays</a>
         <a class="btn btn--ghost" href="${waLink(business, 'Hi Durban Luxe, I would like to enquire about a stay.')}" rel="noopener" target="_blank">${icon('whatsapp-logo')}<span>WhatsApp</span></a>
@@ -75,7 +75,8 @@ export function home(ctx) {
   <div class="container statement__inner reveal">
     ${diamond('diamond--lg')}
     <h2 id="statement-title" class="statement__title">A small collection of homes, chosen for the coast.</h2>
-    <p class="statement__body">Durban Luxe offers ${n} holiday homes along the KwaZulu-Natal coast, from a two-bedroom beach bungalow to villas for fourteen and more. They offer a personal concierge service, and every enquiry starts with a WhatsApp message.</p>
+    <p class="statement__sig">Personal concierge service, and a direct line to us on WhatsApp.</p>
+    <p class="statement__body">We offer ${n} holiday homes along the KwaZulu-Natal coast, from a two-bedroom beach bungalow to villas for fourteen and more.</p>
   </div>
 </section>
 
@@ -121,7 +122,7 @@ export function home(ctx) {
       <li class="reveal"><h3 class="why__claim">A pool of your own</h3><p>${pools} homes come with a private pool.</p></li>
       <li class="reveal"><h3 class="why__claim">The Indian Ocean in view</h3><p>${seaView} homes look out to sea.</p></li>
       <li class="reveal"><h3 class="why__claim">Room for the whole group</h3><p>The largest home sleeps ${maxGuests} or more, for reunions and event stays.</p></li>
-      <li class="reveal"><h3 class="why__claim">Personal concierge service</h3><p>Offered by Durban Luxe. Enquiries from this site go straight to them on WhatsApp.</p></li>
+      <li class="reveal"><h3 class="why__claim">Personal concierge service</h3><p>Our own service. Every enquiry comes straight to us on WhatsApp.</p></li>
     </ul>
   </div>
 </section>
@@ -154,7 +155,7 @@ export function home(ctx) {
   <div class="container cta__grid">
     <div class="cta__copy reveal">
       <h2 id="cta-title" class="h2">Tell us your dates</h2>
-      <p>Share when you're coming and how many of you there are. Durban Luxe will confirm availability and current rates on WhatsApp.</p>
+      <p>Share when you're coming and how many of you there are. We'll confirm availability and current rates on WhatsApp.</p>
       <p class="cta__direct">Or message directly: <a class="text-link" href="${waLink(business)}" rel="noopener" target="_blank">${esc(business.whatsapp.display)}</a></p>
     </div>
     <div class="cta__form reveal">${enquiryForm(ctx, { properties: P, id: 'home-enquiry' })}</div>
@@ -173,7 +174,6 @@ export function home(ctx) {
       '@context': 'https://schema.org', '@type': 'LodgingBusiness', name: business.officialName,
       description: business.bio.replace(/\s*\n\s*/g, '. '), url: ctx.config.siteUrl, telephone: business.whatsapp.e164,
       sameAs: [business.instagram.url], areaServed: ['Durban', 'Umhlanga', 'Dolphin Coast', 'Ballito', 'Zimbali'],
-      address: { '@type': 'PostalAddress', addressLocality: 'Durban', addressRegion: 'KwaZulu-Natal', addressCountry: 'ZA' },
       logo: `${ctx.config.siteUrl}images/brand/logo-full.png`,
     }],
     bodyClass: 'page-home',

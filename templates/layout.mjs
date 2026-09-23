@@ -40,7 +40,6 @@ ${jsonLd.map((j) => `<script type="application/ld+json">${JSON.stringify(j).repl
 </head>
 <body class="${bodyClass}">
 <a class="skip-link" href="#main">Skip to content</a>
-${config.proposalMode ? `<div class="proposal-bar" role="note">Website proposal for Durban Luxe. Content is drawn from <a href="${business.instagram.url}" rel="noopener">@durban_luxe</a>; enquiries go to their real WhatsApp.</div>` : ''}
 <header class="site-header" data-header>
   <div class="container site-header__inner">
     <a class="brand" href="${base}" aria-label="Durban Luxe, home">
@@ -95,8 +94,7 @@ ${body}
     </div>
   </div>
   <div class="container site-footer__base">
-    <p>Rates are published "from" prices per night and are confirmed with Durban Luxe on enquiry. This site does not take bookings or show live availability.</p>
-    ${config.proposalMode ? '<p>Proposal preview. Not indexed by search engines.</p>' : ''}
+    <p>Rates are published "from" prices per night, and we confirm the current rate when you enquire. We don't take bookings online or show live availability.</p>
   </div>
 </footer>
 <script src="${base}js/site.js?v=${ctx.version}" defer></script>

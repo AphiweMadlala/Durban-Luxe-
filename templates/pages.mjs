@@ -19,14 +19,14 @@ export function about(ctx) {
 <section class="section-sm container about">
   <div class="about__text">
     <h2 class="h2">A coastal collection</h2>
-    <p>Durban Luxe presents ${P.length} holiday homes along the KwaZulu-Natal coast. ${regions.map((r) => `${r.count} are on ${r.label === 'Dolphin Coast' ? 'the Dolphin Coast' : `the ${r.label} side`}`).join(' and ')}, from Umhlanga Rocks and Umdloti up to Zimbali, Ballito, Salt Rock and Christmas Bay.</p>
+    <p>We offer ${P.length} holiday homes along the KwaZulu-Natal coast. ${regions.map((r) => `${r.count} are on ${r.label === 'Dolphin Coast' ? 'the Dolphin Coast' : `the ${r.label} side`}`).join(' and ')}, from Umhlanga Rocks and Umdloti up to Zimbali, Ballito, Salt Rock and Christmas Bay.</p>
     <p>The homes range from a two-bedroom beach bungalow to a seven-bedroom house with a separate granny flat, and most are made for groups: families, friends travelling together, and celebrations.</p>
 
     <h2 class="h2">How booking works</h2>
     <ol class="steps" role="list">
       <li><h3 class="h3">Choose a stay, or ask for ideas</h3><p>Browse the homes here or on <a class="text-link" href="${business.instagram.url}" rel="noopener" target="_blank">${esc(business.instagram.handle)}</a>.</p></li>
-      <li><h3 class="h3">Send your dates on WhatsApp</h3><p>Every enquiry form on this site drafts a WhatsApp message to Durban Luxe with your dates and group size. You review it and press send.</p></li>
-      <li><h3 class="h3">Durban Luxe confirms</h3><p>They reply with availability and the current rate for your dates. Published prices are "from" rates per night, and most exclude VAT.</p></li>
+      <li><h3 class="h3">Send your dates on WhatsApp</h3><p>Every enquiry form on this site drafts a WhatsApp message to us with your dates and group size. You review it and press send.</p></li>
+      <li><h3 class="h3">We confirm</h3><p>We reply with availability and the current rate for your dates. Published prices are "from" rates per night, and most exclude VAT.</p></li>
     </ol>
 
     <h2 class="h2">Rates at a glance</h2>
@@ -53,17 +53,17 @@ export function enquire(ctx) {
   const body = `
 <section class="page-head container">
   <h1 class="h1">Enquire</h1>
-  <p class="lede">Tell Durban Luxe your dates and group size. They'll confirm availability and the current rate on WhatsApp.</p>
+  <p class="lede">Tell us your dates and group size. We'll confirm availability and the current rate on WhatsApp.</p>
 </section>
 <section class="section-sm container enquire">
   <div class="enquire__form">${enquiryForm(ctx, { properties: P, id: 'page-enquiry' })}</div>
   <aside class="enquire__direct" aria-labelledby="direct-title">
-    <h2 id="direct-title" class="h3">Contact Durban Luxe directly</h2>
+    <h2 id="direct-title" class="h3">Contact us directly</h2>
     <dl class="facts">
       <div><dt>WhatsApp</dt><dd><a class="text-link" href="${waLink(business)}" rel="noopener" target="_blank">${esc(business.whatsapp.display)}</a></dd></div>
       <div><dt>Instagram</dt><dd><a class="text-link" href="${business.instagram.url}" rel="noopener" target="_blank">${esc(business.instagram.handle)}</a> (direct messages)</dd></div>
     </dl>
-    <p class="muted small">This site doesn't take payments or bookings, and it can't see live availability. Every enquiry goes to Durban Luxe, who confirm dates and rates personally.</p>
+    <p class="muted small">This site doesn't take payments or bookings, and it can't see live availability. Every enquiry comes to us, and we confirm dates and rates personally.</p>
   </aside>
 </section>`;
   return layout(ctx, {
