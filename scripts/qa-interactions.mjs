@@ -117,6 +117,15 @@ const errors = [];
   await page.waitForTimeout(200);
   check('mobile menu opens', await page.isVisible('[data-mobile-menu]'));
   check('menu toggle aria-expanded=true', (await page.getAttribute('[data-menu-toggle]', 'aria-expanded')) === 'true');
+  // Regression: backdrop-filter on the header made it the fixed menu's containing block, collapsing the
+  // open menu to a 56px strip with the links clipped. It must fill the screen below the header.
+  await page.evaluate(() => scrollTo(0, 600));
+  const menuBox = await page.evaluate(() => {
+    const m = document.querySelector('[data-mobile-menu]').getBoundingClientRect();
+    const links = [...document.querySelectorAll('[data-mobile-menu] a')].map((a) => a.getBoundingClientRect());
+    return { bottom: Math.round(m.bottom), height: Math.round(m.height), linksInside: links.every((r) => r.top >= m.top && r.bottom <= m.bottom) };
+  });
+  check('open menu fills the viewport below the header', menuBox.bottom === 844 && menuBox.height >= 700 && menuBox.linksInside, `${menuBox.height}px tall, bottom ${menuBox.bottom}`);
   await page.keyboard.press('Escape');
   await page.waitForTimeout(200);
   check('Escape closes mobile menu', !(await page.isVisible('[data-mobile-menu]')));
