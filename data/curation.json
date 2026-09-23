@@ -1,0 +1,446 @@
+{
+  "_about": "Human-curated layer applied on top of facts parsed from Instagram captions (scripts/build-data.py). Names are DESCRIPTIVE labels assigned for the proposal — Durban Luxe does not publish property names. Every location/fact here must be traceable to the cited post caption or to visual inspection of that post's own photos. heroIndex / exclude use 1-based carousel positions.",
+  "properties": {
+    "DJZyKeSsq-u": {
+      "slug": "umhlanga-rocks-pool-house",
+      "name": "Umhlanga Rocks Pool House",
+      "propertyType": "House",
+      "region": "Durban & Umhlanga", "area": "Umhlanga", "suburb": "Umhlanga Rocks", "development": null,
+      "heroIndex": 1,
+      "summary": "A five-bedroom pool house a short stroll from Umhlanga Beach.",
+      "description": [
+        "Set close to Umhlanga Beach, this five-bedroom home is made for groups who want the coastline within walking distance and plenty of room to spread out when they come back.",
+        "A private outdoor pool and private balcony anchor the outdoor living, while a pool table, smart TV with Netflix and in-unit washer keep longer stays easy. The host greets you on arrival."
+      ],
+      "highlights": ["Walk to Umhlanga Beach", "Private outdoor pool", "Sleeps 10", "Pool table", "Rate includes VAT"],
+      "notes": ["Only listing whose published rate INCLUDES VAT; all others are excl. VAT.", "Bathroom count not published."]
+    },
+    "DJjHjXrsfcz": {
+      "slug": "salt-rock-beach-villa",
+      "name": "Salt Rock Beach Villa",
+      "propertyType": "Villa",
+      "region": "Dolphin Coast", "area": "Salt Rock", "suburb": "Salt Rock", "development": null,
+      "heroIndex": 1,
+      "airportNote": "14 minutes from King Shaka International Airport (as stated by Durban Luxe)",
+      "summary": "A villa on the beach at Salt Rock, with a saltwater pool and Indian Ocean sunsets.",
+      "description": [
+        "This Salt Rock villa sits on the beach itself: the sound of the Indian Ocean, long sunsets from the deck, and dolphins often visible offshore.",
+        "Four bedrooms and four bathrooms sleep eight. Outside there's a saltwater pool, sun loungers, an outdoor shower and a braai, with beach access straight from the property."
+      ],
+      "highlights": ["Villa on the beach", "Saltwater private pool", "Beach access", "Air conditioning", "Free on-site parking"],
+      "notes": []
+    },
+    "DJoZyqAsBdp": {
+      "slug": "balinese-sea-view-villa",
+      "name": "Balinese Sea-View Villa",
+      "propertyType": "Villa",
+      "region": "Dolphin Coast", "area": "Dolphin Coast", "suburb": null, "development": null,
+      "heroIndex": 1,
+      "summary": "A Balinese-style villa with breaker sea views, solid-wood shutters and a saltwater pool.",
+      "description": [
+        "Balinese in style and full of character, this villa flows from an open-plan kitchen and large living area out to a covered patio, level lawn and saltwater pool, with a viewing deck looking out over the breakers.",
+        "Solid-wood shutters on every window add privacy and warmth. Five bedrooms and five bathrooms sleep ten, and there's a fire pit, a Marshall sound system and three garages."
+      ],
+      "highlights": ["Breaker sea views", "Saltwater private pool", "Large viewing deck", "Fire pit", "Sleeps 10"],
+      "notes": ["Caption lists '3 open plan garages' in description."]
+    },
+    "DJ9XepgqQee": {
+      "slug": "dolphin-coast-ocean-deck",
+      "name": "Dolphin Coast Ocean Deck",
+      "propertyType": "Beach residence",
+      "region": "Dolphin Coast", "area": "Dolphin Coast", "suburb": null, "development": null,
+      "heroIndex": 13,
+      "summary": "Direct beach access and a 180° ocean deck made for whale and dolphin watching.",
+      "description": [
+        "Tucked into a small, quiet complex, this residence has direct access to the beach and a 180-degree view of the ocean from a deck that's ideal for entertaining and for whale and dolphin watching.",
+        "Three bedrooms with five beds sleep six. Air conditioning, Netflix, board games and an outdoor dining area with a braai make it an easy base for a family beach holiday."
+      ],
+      "highlights": ["Direct beach access", "180° ocean view", "Whale & dolphin watching deck", "Air conditioning"],
+      "notes": []
+    },
+    "DKKKlwFMPUd": {
+      "slug": "beacon-rock-umhlanga-loft",
+      "name": "Beacon Rock Loft, Umhlanga",
+      "propertyType": "Apartment",
+      "region": "Durban & Umhlanga", "area": "Umhlanga", "suburb": "Umhlanga Rocks", "development": "Beacon Rock",
+      "heroIndex": 16,
+      "summary": "A serviced double-storey loft opposite Oceans Mall, five minutes' walk from Umhlanga Pier.",
+      "description": [
+        "A loft-style, double-storey apartment in the heart of Umhlanga Rocks, across from Oceans Mall and a five-minute walk to Umhlanga Pier and Bronze Beach.",
+        "Three bedrooms, each with its own bathroom, sleep six. The building has a lift and a pool deck, and housekeeping is available for an hour a day, five days a week. Check-in is self-service."
+      ],
+      "highlights": ["Opposite Oceans Mall", "5-min walk to Umhlanga Pier", "Housekeeping available", "Lift access", "Air conditioning"],
+      "notes": ["Building (Beacon Rock) stated in caption; exact unit not published."]
+    },
+    "DLSzgbWMhV3": {
+      "slug": "zimbali-garden-cottage",
+      "name": "Zimbali Garden Cottage",
+      "propertyType": "House",
+      "region": "Dolphin Coast", "area": "Zimbali", "suburb": "Zimbali", "development": null,
+      "heroIndex": 14,
+      "summary": "A big, bright double-storey cottage in a tropical garden, sleeping twelve.",
+      "description": [
+        "A big, bright cottage in a tropical garden, with exposed beams and classic shutters. The kitchen, lounge and dining room are open plan and open through stacking glass doors onto a covered patio, then down to the pool and pool house.",
+        "Five bedrooms, three of them downstairs, sleep up to twelve. There's also a ping-pong table and on-site parking."
+      ],
+      "highlights": ["Sleeps 12", "Private pool & pool house", "Tropical garden", "Shared beach access"],
+      "notes": []
+    },
+    "DMKU29BMzpC": {
+      "slug": "zimbali-bushbuck-pool-villa",
+      "name": "Zimbali Bushbuck Pool Villa",
+      "propertyType": "Villa",
+      "region": "Dolphin Coast", "area": "Zimbali", "suburb": "Zimbali", "development": null,
+      "heroIndex": 1,
+      "bathroomsFromDescription": 4,
+      "summary": "A modern four-bedroom home with a private pool, walking distance from the Bushbuck clubhouse.",
+      "description": [
+        "A modern four-bedroom, four-bathroom home within walking distance of the Zimbali Bushbuck clubhouse and pools.",
+        "The kitchen, two lounges and bar are the social heart of the house, opening from the dining area onto a covered patio, wooden deck and private pool. Central air conditioning, DStv, a mini-golf green and resort access round it out."
+      ],
+      "highlights": ["Private outdoor pool", "Walk to Bushbuck clubhouse", "Resort access", "Central air conditioning"],
+      "notes": ["Bathroom count (4) comes from the description; the amenity line omits it."]
+    },
+    "DMNIlIlMF7o": {
+      "slug": "zimbali-sea-view-villa",
+      "name": "Zimbali Sea-View Villa",
+      "propertyType": "Villa",
+      "region": "Dolphin Coast", "area": "Zimbali", "suburb": "Zimbali", "development": "Zimbali Estate Resort",
+      "heroIndex": 17,
+      "summary": "A four-bedroom villa in Zimbali Estate Resort with a pool deck overlooking the sea.",
+      "description": [
+        "Inside the Zimbali Estate Resort, this four-bedroom villa has an open-plan lounge, bar, kitchen and dining area that opens onto a deck with a private pool and sea views.",
+        "It sleeps eight, with central air conditioning, a safe, resort access and beach access."
+      ],
+      "highlights": ["Sea views", "Private pool deck", "Resort access", "Beach access"],
+      "notes": []
+    },
+    "DMk37ehtcs9": {
+      "slug": "ballito-penthouse",
+      "name": "Ballito Penthouse",
+      "propertyType": "Penthouse",
+      "region": "Dolphin Coast", "area": "Ballito", "suburb": "Ballito", "development": null,
+      "heroIndex": 9,
+      "summary": "A design-led penthouse with a gourmet kitchen and a rooftop pool made for sunset.",
+      "description": [
+        "Elevated living: a penthouse with sophisticated design, high-end finishes and a gourmet kitchen.",
+        "Three bedrooms and two and a half bathrooms sleep six. There's central air conditioning, a dedicated workspace, a pool and secure on-site parking. Check-in is by lockbox."
+      ],
+      "highlights": ["Penthouse level", "Pool with open views", "Gourmet kitchen", "Dedicated workspace", "Secure parking"],
+      "notes": ["Sunset/rooftop-pool character is from the post's own photos."]
+    },
+    "DMk6ftvNyTU": {
+      "slug": "westbrook-beach-house",
+      "name": "Westbrook Beach House",
+      "propertyType": "House",
+      "region": "Durban & Umhlanga", "area": "Westbrook", "suburb": "Westbrook", "development": null,
+      "heroIndex": 18,
+      "summary": "A five-bedroom holiday home on North Beach Road with wide Indian Ocean views.",
+      "description": [
+        "On quiet North Beach Road in Westbrook, this five-bedroom holiday home has wide views over the Indian Ocean, often good for spotting marine life.",
+        "Five bedrooms and five bathrooms sleep ten. It has a private pool, an indoor fireplace, central air conditioning and a cot, with beach access and secure parking. Check-in is self-service."
+      ],
+      "highlights": ["Expansive sea views", "Private pool", "Beach access", "Sleeps 10", "Indoor fireplace"],
+      "notes": []
+    },
+    "DObOh0mjKiC": {
+      "slug": "dolphin-coast-architectural-villa",
+      "name": "Dolphin Coast Architectural Villa",
+      "propertyType": "Villa",
+      "region": "Dolphin Coast", "area": "Dolphin Coast", "suburb": null, "development": null,
+      "heroIndex": 9,
+      "summary": "A modern architectural villa with sea views from almost every room and an ocean-facing bath.",
+      "description": [
+        "A modern architectural villa with sea views from almost every angle. The main suite has its own private balcony and an ocean-facing bath.",
+        "Four bedrooms sleep eight, with six and a half bathrooms, a lift, an outdoor kitchen, a private pool and three parking spaces. Cleaning is available during your stay."
+      ],
+      "highlights": ["Sea views from nearly every room", "Ocean-facing bath in the main suite", "Private pool", "Lift", "3 parking spaces"],
+      "notes": ["6.5 bathrooms for 4 bedrooms as published."]
+    },
+    "DObQ48zjAKO": {
+      "slug": "solar-powered-pool-home",
+      "name": "Solar-Powered Pool Home",
+      "propertyType": "House",
+      "region": "Dolphin Coast", "area": "Dolphin Coast", "suburb": null, "development": null,
+      "heroIndex": 2,
+      "summary": "A fully solar-powered, stand-alone home with a private pool and a pool table. Pets allowed.",
+      "description": [
+        "A stand-alone home that runs fully on solar power, sleeping up to eight. Inside, an open-plan lounge, dining area and bar with a pool table lead out to a sunny patio and private pool.",
+        "Four bedrooms and three and a half bathrooms, a 65-inch TV with Netflix, a dedicated workspace, a hammock and an outdoor kitchen. Pets are allowed."
+      ],
+      "highlights": ["Fully solar-powered", "Private pool", "Pets allowed", "Pool table", "Dedicated workspace"],
+      "notes": []
+    },
+    "DObTNn2jNjp": {
+      "slug": "port-zimbali-milkwood-house",
+      "name": "Port Zimbali Milkwood House",
+      "propertyType": "House",
+      "region": "Dolphin Coast", "area": "Zimbali", "suburb": "Port Zimbali", "development": "Port Zimbali",
+      "heroIndex": 1,
+      "summary": "A five-bedroom home on Milkwood Drive, steps from the beach, with a private pool.",
+      "description": [
+        "On Milkwood Drive in Port Zimbali, a few steps from the beach, this five-bedroom holiday home pairs sea views with a private pool.",
+        "It sleeps ten, with three bathrooms, central air conditioning, a dishwasher, an outdoor shower and free resort access."
+      ],
+      "highlights": ["Steps from the beach", "Sea views", "Private pool", "Free resort access", "Sleeps 10"],
+      "notes": ["Private pool stated in description (not in amenity list); visible in photos."]
+    },
+    "DPOB1g9jCgt": {
+      "slug": "christmas-bay-beachfront-villa",
+      "name": "Christmas Bay Beachfront Villa",
+      "propertyType": "Villa",
+      "region": "Dolphin Coast", "area": "Christmas Bay", "suburb": "Christmas Bay", "development": null,
+      "heroIndex": 20,
+      "airportNote": "About 20 minutes' drive from King Shaka International Airport (as stated by Durban Luxe)",
+      "summary": "An exclusive beachfront villa on the sands of Christmas Bay, sleeping fourteen in six en-suite rooms.",
+      "description": [
+        "Right on the sand at Christmas Bay, this beachfront villa has private beach access and open ocean views. It's secluded, yet only about 20 minutes' drive from King Shaka International Airport.",
+        "Six bedrooms, each with its own en-suite bathroom, sleep up to fourteen. There's a private pool, sun loungers, an indoor fireplace, a travel cot on request, and cleaning available during your stay."
+      ],
+      "highlights": ["Beachfront on Christmas Bay", "Private beach access", "Sleeps 14", "Six en-suite bedrooms", "Private pool"],
+      "notes": []
+    },
+    "DPOFTO1DDLK": {
+      "slug": "zimbali-golf-view-villa",
+      "name": "Zimbali Golf-View Villa",
+      "propertyType": "Villa",
+      "region": "Dolphin Coast", "area": "Zimbali", "suburb": "Zimbali", "development": "Zimbali Estate",
+      "heroIndex": 1,
+      "summary": "A four-bedroom en-suite villa with sea and golf-course views and a private pool deck.",
+      "description": [
+        "In Zimbali Estate, this four-bedroom villa, with every bedroom en-suite, looks out over the sea and the golf course. A sleek open-plan kitchen, lounge and dining space lead out to a private deck.",
+        "Outside there's a gas braai, loungers and a private pool. It sleeps eight, and housekeeping is available Monday to Saturday mornings. Check-in is self-service."
+      ],
+      "highlights": ["Sea & golf-course views", "All four bedrooms en-suite", "Private pool", "Gas braai", "Housekeeping available"],
+      "notes": ["Caption header reads 'Zimbali Estate, Ballito'."]
+    },
+    "DPOG8KbjMGN": {
+      "slug": "dolphin-coast-beach-bungalow",
+      "name": "Dolphin Coast Beach Bungalow",
+      "propertyType": "Bungalow",
+      "region": "Dolphin Coast", "area": "Dolphin Coast", "suburb": null, "development": null,
+      "heroIndex": 8,
+      "summary": "A comfortable, contemporary private beach bungalow with ocean views.",
+      "description": [
+        "A comfortable, contemporary private beach bungalow with the ocean close by and views across the water.",
+        "Two bedrooms and two bathrooms sleep six. It has a fully equipped kitchen, a balcony, a braai, children's books and toys, and self check-in."
+      ],
+      "highlights": ["Ocean views", "Beach access", "Family-friendly", "Self check-in"],
+      "notes": []
+    },
+    "DPOJTSoDH_w": {
+      "slug": "forty-seconds-beach-terrace",
+      "name": "Forty Seconds Beach Terrace",
+      "propertyType": "Beach residence",
+      "region": "Dolphin Coast", "area": "Dolphin Coast", "suburb": null, "development": null,
+      "heroIndex": 13,
+      "summary": "“40 seconds to the beach”: a terraced beach home with private beach access.",
+      "description": [
+        "Durban Luxe calls it “40 seconds to the beach”: about the time it takes to walk from the front door to the sand. A large front terrace, with space for dining, lounging and sunbathing, looks straight out over the beach, so it's easy to keep an eye on children playing below.",
+        "Three bedrooms and two bathrooms sleep six. There are two patios, central air conditioning, a dedicated workspace, and Netflix, Amazon Prime and DStv. Housekeeping is available on weekdays."
+      ],
+      "highlights": ["40 seconds to the beach", "Private beach access", "Beach-view terrace", "Housekeeping available"],
+      "notes": []
+    },
+    "DPOMAxFjA-r": {
+      "slug": "ballito-beachfront-apartment",
+      "name": "Ballito Beachfront Apartment",
+      "propertyType": "Apartment",
+      "region": "Dolphin Coast", "area": "Ballito", "suburb": "Ballito", "development": null,
+      "heroIndex": 1,
+      "summary": "A three-bedroom apartment with sea views from every balcony and direct beach entry.",
+      "description": [
+        "Sea views from every balcony. This three-bedroom apartment has en-suite bathrooms with both bath and shower, a modern kitchen and a gas braai for sunset dinners.",
+        "The building has a pool, 24-hour security, a lift and direct access to the beach. It sleeps six."
+      ],
+      "highlights": ["Sea views from every balcony", "Direct beach access", "24-hour security", "Lift access", "Gas braai"],
+      "notes": ["Caption reads 'Minimum stay of 3' (unit omitted); treated as 3 nights, consistent with every other listing."]
+    },
+    "DPgbVx5jJDr": {
+      "slug": "durban-beachfront-garden-retreat",
+      "name": "Beachfront Garden Retreat",
+      "propertyType": "Beach residence",
+      "region": "Durban & Umhlanga", "area": "Durban", "suburb": null, "development": null,
+      "heroIndex": 1,
+      "summary": "A three-bedroom beachfront retreat with a private garden, near restaurants and cafés.",
+      "description": [
+        "A three-bedroom, three-bathroom beachfront retreat with direct beach access, a stylish lounge and dining area, and a fully equipped kitchen.",
+        "It has a private garden and braai area, a shared pool and a gym, and it's close to restaurants, cafés, bars and boutiques. Housekeeping is available for an hour a day, Monday to Saturday."
+      ],
+      "highlights": ["Beachfront", "Direct beach access", "Private garden & braai", "Housekeeping available"],
+      "notes": ["Caption gives only 'Durban' — no suburb."]
+    },
+    "DPgdG1jDL3z": {
+      "slug": "umhlanga-beach-duplex",
+      "name": "Umhlanga Beach Duplex",
+      "propertyType": "Apartment",
+      "region": "Durban & Umhlanga", "area": "Umhlanga", "suburb": "Umhlanga", "development": null,
+      "heroIndex": 3,
+      "summary": "A freshly renovated duplex right on the beach in Umhlanga, with a garden braai.",
+      "description": [
+        "A freshly renovated duplex right on the beach in Umhlanga. The bedrooms are upstairs, and the living area downstairs opens onto a patio and garden with a braai.",
+        "Three bedrooms and two bathrooms sleep six, with an outdoor shower, a shared pool and self check-in."
+      ],
+      "highlights": ["On the beach", "Freshly renovated", "Garden & braai", "Outdoor shower"],
+      "notes": ["Caption header says 'Durban'; description places it 'right on the beach in Umhlanga'."]
+    },
+    "DPge5h7DIM-": {
+      "slug": "contemporary-garden-pool-house",
+      "name": "Contemporary Garden Pool House",
+      "propertyType": "House",
+      "region": "Dolphin Coast", "area": "Dolphin Coast", "suburb": null, "development": null,
+      "heroIndex": 1,
+      "summary": "A contemporary three-bedroom house with a private pool, where every bedroom is en-suite.",
+      "description": [
+        "A modern house where all three bedrooms are en-suite. The open-plan kitchen, dining room and lounge lead to a covered patio with a gas braai and a dining area overlooking the garden and private pool.",
+        "It sleeps six, with central air conditioning, a dedicated workspace, resort access and self check-in."
+      ],
+      "highlights": ["Private pool", "All bedrooms en-suite", "Covered patio & gas braai", "Resort access"],
+      "notes": []
+    },
+    "DPghsyMjNSa": {
+      "slug": "veranda-sea-view-villa",
+      "name": "Veranda Sea-View Villa",
+      "propertyType": "Villa",
+      "region": "Dolphin Coast", "area": "Dolphin Coast", "suburb": null, "development": null,
+      "heroIndex": 2,
+      "airportNote": "15 minutes from the airport and 5 minutes from shops and dining (as stated by Durban Luxe)",
+      "summary": "A single-level villa with a grand veranda, a built-in bar and a 180° sea view.",
+      "description": [
+        "Fifteen minutes from the airport and five from shops and restaurants. A sunny open-plan lounge, dining area and kitchen open onto a large covered veranda with a built-in bar and a 180-degree sea view.",
+        "Dinner is served at a four-metre oak table. The villa is all on one level, with four en-suite bedrooms whose king beds can convert, two parking bays plus a double garage, and a well-equipped kitchen."
+      ],
+      "highlights": ["180° sea view", "Covered veranda with bar", "Four-metre oak dining table", "Single-level living", "All bedrooms en-suite"],
+      "notes": []
+    },
+    "DPgjytrjOze": {
+      "slug": "zimbali-family-villa",
+      "name": "Zimbali Family Villa",
+      "propertyType": "Villa",
+      "region": "Dolphin Coast", "area": "Zimbali", "suburb": "Zimbali", "development": "Zimbali Coastal Estate",
+      "heroIndex": 17,
+      "guestsNote": "Up to 6 adults and 2 children, as stated in the description (amenity line says 6 guests).",
+      "summary": "A four-bedroom home in Zimbali Coastal Estate with a private pool and outdoor dining terrace.",
+      "description": [
+        "A four-bedroom home in Zimbali Coastal Estate, built for family holidays or a stylish getaway with friends. The lounge, dining area and kitchen are open plan, and the kitchen has premium appliances and generous counter space.",
+        "An outdoor dining terrace and a private pool make the most of the setting. It sleeps six adults and two children, and resort access is available at an extra cost."
+      ],
+      "highlights": ["Private pool", "Zimbali Coastal Estate", "Outdoor dining terrace", "Family-friendly"],
+      "notes": ["Resort access is 'paid' per caption."]
+    },
+    "DPglvr0jAs7": {
+      "slug": "zimbali-tinderwood-villa",
+      "name": "Zimbali Tinderwood Villa",
+      "propertyType": "Villa",
+      "region": "Dolphin Coast", "area": "Zimbali", "suburb": "Zimbali", "development": "Tinderwood, Zimbali Coastal Estate",
+      "heroIndex": 11,
+      "exclude": [12],
+      "summary": "A calm three-bedroom villa overlooking a greenbelt and dam, with a private pool deck.",
+      "description": [
+        "A calm, stylish villa in peaceful Tinderwood, inside Zimbali Coastal Estate, overlooking a greenbelt and dam.",
+        "The open-plan living space opens onto a private deck with a pool, a gas braai and outdoor furniture. Three bedrooms sleep six, with central air conditioning and self check-in."
+      ],
+      "highlights": ["Greenbelt & dam outlook", "Private pool deck", "Gas braai", "Zimbali Coastal Estate"],
+      "notes": ["Carousel image 12 is a near-duplicate of 11 and is excluded."]
+    },
+    "DPgqDpqjEa-": {
+      "slug": "dolphin-coast-entertainers-villa",
+      "name": "Entertainer's Pool Villa",
+      "propertyType": "Villa",
+      "region": "Dolphin Coast", "area": "Dolphin Coast", "suburb": null, "development": null,
+      "heroIndex": 13,
+      "summary": "A spacious four-bedroom en-suite home with a downstairs bar lounge opening to the pool.",
+      "description": [
+        "A spacious, elegant home with large, modern entertaining rooms. All four bedrooms are en-suite.",
+        "Downstairs, a separate lounge and bar area opens straight onto the pool. It sleeps eight, with central air conditioning, resort access and self check-in."
+      ],
+      "highlights": ["Bar & entertainment lounge", "Pool", "All bedrooms en-suite", "Resort access"],
+      "notes": []
+    },
+    "DPgsoW1DMtA": {
+      "slug": "ballito-fairway-townhouse",
+      "name": "Ballito Fairway Townhouse",
+      "propertyType": "Townhouse",
+      "region": "Dolphin Coast", "area": "Ballito", "suburb": "Ballito", "development": null,
+      "heroIndex": 1,
+      "summary": "A bright townhouse with fairway views, a private pool and lake access.",
+      "description": [
+        "A bright townhouse looking out over several fairways. On the ground floor, open-plan living, dining and kitchen areas lead out to a covered patio, a wooden deck and a private pool.",
+        "Upstairs are three bedrooms: the main suite has the best of the fairway views. It sleeps six, with a cot and high chair, lake access and free resort access."
+      ],
+      "highlights": ["Golf fairway views", "Private pool", "Lake access", "Baby cot & high chair"],
+      "notes": []
+    },
+    "DPqYxmxjCla": {
+      "slug": "zimbali-indoor-outdoor-villa",
+      "name": "Zimbali Indoor-Outdoor Villa",
+      "propertyType": "Villa",
+      "region": "Dolphin Coast", "area": "Zimbali", "suburb": "Zimbali", "development": null,
+      "heroIndex": 13,
+      "summary": "An airy four-bedroom villa for indoor-outdoor living and Zimbali sunsets.",
+      "description": [
+        "An airy, open-plan home where indoor and outdoor living run together, ideal for sunny coastal days and Zimbali sunsets. Relax by the private pool or explore everything the estate has to offer.",
+        "Ballito, Salt Rock and Umhlanga Rocks are within easy reach. Four bedrooms and four and a half bathrooms sleep eight, and housekeeping is available Monday to Saturday mornings."
+      ],
+      "highlights": ["Private pool", "Indoor-outdoor living", "Resort access", "Housekeeping available"],
+      "notes": ["Shares caption template/housekeeping hours with DPOFTO1DDLK but no shared photography — treated as a separate property."]
+    },
+    "DPqbmxFjPv5": {
+      "slug": "umdloti-ocean-view-villa",
+      "name": "Umdloti Ocean-View Villa",
+      "propertyType": "Villa",
+      "region": "Durban & Umhlanga", "area": "Umdloti", "suburb": "Umdloti", "development": null,
+      "heroIndex": 17,
+      "summary": "A glass-walled villa with polished concrete floors and a pool deck facing the Indian Ocean.",
+      "description": [
+        "Spend long afternoons in the pool on the wooden deck, looking out over the Indian Ocean. Inside, muted tones, polished concrete floors and glass walls bring the outside in.",
+        "Three bedrooms and three bathrooms sleep six. It has a cot and high chair, central air conditioning and a dedicated workspace, and pets are allowed."
+      ],
+      "highlights": ["Indian Ocean views", "Private pool on timber deck", "Pets allowed", "Dedicated workspace"],
+      "notes": []
+    },
+    "DPqdkFnjJS0": {
+      "slug": "ballito-dual-level-sea-view-home",
+      "name": "Ballito Dual-Level Home",
+      "propertyType": "House",
+      "region": "Dolphin Coast", "area": "Ballito", "suburb": "Ballito", "development": null,
+      "heroIndex": 2,
+      "summary": "A spacious dual-level home with sea views from most rooms, two lounges and a private pool.",
+      "description": [
+        "Most of this spacious, dual-level home looks out to sea. It's finished with modern appliances and has two lounges, a dining area, and a fully equipped kitchen with a scullery.",
+        "Four bedrooms sleep eight, with four and a half bathrooms, an indoor fireplace, a fire pit, a private pool and beach essentials. Cleaning is available during your stay."
+      ],
+      "highlights": ["Sea views from most rooms", "Private pool", "Fire pit & indoor fireplace", "Resort access"],
+      "notes": []
+    },
+    "DVgoVIPDAfF": {
+      "slug": "shakas-rock-group-house",
+      "name": "Shaka's Rock Group House",
+      "propertyType": "House",
+      "region": "Dolphin Coast", "area": "Ballito", "suburb": "Shaka's Rock", "development": null,
+      "heroIndex": 2,
+      "guestsNote": "Published as '16+ Guests'.",
+      "summary": "Seven bedrooms plus a granny flat, 180 m from Shaka's Rock Beach. Built for big groups.",
+      "description": [
+        "Just 180 m from Shaka's Rock Beach, this large, stylish holiday home is made for family reunions, group holidays and weekends by the sea. Thompson's Bay is nearby and the shops are minutes away.",
+        "Seven bedrooms plus a separate granny flat sleep sixteen or more. There's a pool, a pool table, an outdoor shower and beach essentials, and housekeeping is available at extra cost."
+      ],
+      "highlights": ["180 m from Shaka's Rock Beach", "Sleeps 16+", "7 bedrooms + granny flat", "Pool & pool table"],
+      "notes": ["Caption lists '8 Bedrooms' and describes '7 spacious bedrooms plus a separate granny flat' — consistent (7+1)."]
+    },
+    "DdLpaP3jFjI": {
+      "slug": "ballito-tropical-coastal-villa",
+      "name": "Ballito Tropical Coastal Villa",
+      "propertyType": "Villa",
+      "region": "Dolphin Coast", "area": "Ballito", "suburb": "Ballito", "development": null,
+      "heroIndex": 4,
+      "summary": "An elegant three-storey villa moments from the beach, with ocean views and a private pool.",
+      "description": [
+        "An elegant three-storey villa moments from the beach, with ocean views, lush tropical gardens and a private pool. Wake up to the sound of the sea and have your morning coffee watching dolphins offshore.",
+        "Five bedrooms and six bathrooms sleep ten. There's a fire pit, exercise equipment, a dedicated workspace and self check-in, and housekeeping is available at extra cost."
+      ],
+      "highlights": ["Moments from the beach", "Ocean views", "Private pool", "Tropical gardens", "Sleeps 10"],
+      "notes": ["Most recent listing (12 Sep 2026)."]
+    }
+  }
+}

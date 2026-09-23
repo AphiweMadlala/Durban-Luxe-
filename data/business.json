@@ -1,0 +1,43 @@
+{
+  "officialName": "Durban Luxe",
+  "instagram": {
+    "handle": "@durban_luxe",
+    "url": "https://www.instagram.com/durban_luxe/",
+    "followers": 6590,
+    "posts": 31,
+    "igUserId": "73484108917"
+  },
+  "bio": "Luxury Holiday Homes in Durban, South Africa \nBeachfront Villas • Family Getaways • Event Stays\nPersonal Concierge Service",
+  "positioning": [
+    "Luxury Holiday Homes in Durban, South Africa",
+    "Beachfront Villas • Family Getaways • Event Stays",
+    "Personal Concierge Service"
+  ],
+  "whatsapp": {
+    "display": "+27 83 706 2601",
+    "e164": "+27837062601",
+    "url": "https://wa.me/27837062601",
+    "source": "Instagram bio link",
+    "sourceRawUrl": "https://wa.me/270837062601?countryCode=27&countryName=ZA&phoneNumber=0837062601",
+    "note": "The bio link is wa.me/270837062601 (country code + trunk 0). Its own query string states countryCode=27, phoneNumber=0837062601; the site uses the standard international form wa.me/27837062601 for the same number."
+  },
+  "phone": {
+    "display": "+27 83 706 2601",
+    "tel": "tel:+27837062601",
+    "source": "Same number as the WhatsApp bio link; voice use not separately confirmed."
+  },
+  "email": null,
+  "website": null,
+  "bookingPlatforms": [],
+  "bookingMethod": "Direct enquiry via WhatsApp (bio link) and Instagram DM. No public booking engine, OTA listing or availability calendar was found.",
+  "serviceArea": [
+    "Dolphin Coast",
+    "Durban & Umhlanga"
+  ],
+  "address": null,
+  "ratesPolicy": "All listings publish a 'From R… p/n' rate, a 3-night minimum stay, and (30 of 31) 'Rate excl VAT'.",
+  "cancellationPolicy": null,
+  "paymentPolicy": null,
+  "logo": "public/images/brand/logo-full.png",
+  "extractedAt": "2026-09-23"
+}

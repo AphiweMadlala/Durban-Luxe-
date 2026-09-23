@@ -1,0 +1,608 @@
+{
+  "categories": [
+    {
+      "id": "water",
+      "label": "Pool & beach"
+    },
+    {
+      "id": "views",
+      "label": "Views"
+    },
+    {
+      "id": "outdoor",
+      "label": "Outdoor living"
+    },
+    {
+      "id": "essentials",
+      "label": "Essentials"
+    },
+    {
+      "id": "kitchen",
+      "label": "Kitchen"
+    },
+    {
+      "id": "comfort",
+      "label": "Comfort"
+    },
+    {
+      "id": "entertainment",
+      "label": "Entertainment"
+    },
+    {
+      "id": "family",
+      "label": "Family"
+    },
+    {
+      "id": "building",
+      "label": "Building & estate"
+    },
+    {
+      "id": "parking",
+      "label": "Parking"
+    },
+    {
+      "id": "security",
+      "label": "Security"
+    },
+    {
+      "id": "safety",
+      "label": "Safety"
+    },
+    {
+      "id": "nearby",
+      "label": "Nearby"
+    }
+  ],
+  "amenities": [
+    {
+      "id": "air-conditioning",
+      "label": "Air conditioning",
+      "category": "essentials",
+      "priority": 1,
+      "listings": 25
+    },
+    {
+      "id": "backup-power",
+      "label": "Solar power (backup)",
+      "category": "essentials",
+      "priority": 1,
+      "listings": 1
+    },
+    {
+      "id": "beach-access",
+      "label": "Beach access",
+      "category": "water",
+      "priority": 1,
+      "listings": 22
+    },
+    {
+      "id": "beachfront",
+      "label": "Beachfront",
+      "category": "water",
+      "priority": 1,
+      "listings": 4
+    },
+    {
+      "id": "braai",
+      "label": "Braai / BBQ",
+      "category": "outdoor",
+      "priority": 1,
+      "listings": 28
+    },
+    {
+      "id": "parking",
+      "label": "Parking on premises",
+      "category": "parking",
+      "priority": 1,
+      "listings": 27
+    },
+    {
+      "id": "private-beach-access",
+      "label": "Private beach access",
+      "category": "water",
+      "priority": 1,
+      "listings": 2
+    },
+    {
+      "id": "private-pool",
+      "label": "Private pool",
+      "category": "water",
+      "priority": 1,
+      "listings": 21
+    },
+    {
+      "id": "sea-view",
+      "label": "Sea view",
+      "category": "views",
+      "priority": 1,
+      "listings": 15
+    },
+    {
+      "id": "secure-parking",
+      "label": "Secure parking",
+      "category": "parking",
+      "priority": 1,
+      "listings": 2
+    },
+    {
+      "id": "security-24h",
+      "label": "24-hour security",
+      "category": "security",
+      "priority": 1,
+      "listings": 1
+    },
+    {
+      "id": "waterfront",
+      "label": "Waterfront",
+      "category": "views",
+      "priority": 1,
+      "listings": 3
+    },
+    {
+      "id": "balcony",
+      "label": "Balcony",
+      "category": "outdoor",
+      "priority": 2,
+      "listings": 19
+    },
+    {
+      "id": "cot",
+      "label": "Cot / crib",
+      "category": "family",
+      "priority": 2,
+      "listings": 4
+    },
+    {
+      "id": "dishwasher",
+      "label": "Dishwasher",
+      "category": "kitchen",
+      "priority": 2,
+      "listings": 3
+    },
+    {
+      "id": "fire-pit",
+      "label": "Fire pit",
+      "category": "outdoor",
+      "priority": 2,
+      "listings": 3
+    },
+    {
+      "id": "full-kitchen",
+      "label": "Fully equipped kitchen",
+      "category": "kitchen",
+      "priority": 2,
+      "listings": 5
+    },
+    {
+      "id": "garden",
+      "label": "Garden / backyard",
+      "category": "outdoor",
+      "priority": 2,
+      "listings": 19
+    },
+    {
+      "id": "golf-view",
+      "label": "Golf course view",
+      "category": "views",
+      "priority": 2,
+      "listings": 1
+    },
+    {
+      "id": "gym",
+      "label": "Gym",
+      "category": "building",
+      "priority": 2,
+      "listings": 2
+    },
+    {
+      "id": "indoor-fireplace",
+      "label": "Indoor fireplace",
+      "category": "comfort",
+      "priority": 2,
+      "listings": 3
+    },
+    {
+      "id": "lift",
+      "label": "Lift",
+      "category": "building",
+      "priority": 2,
+      "listings": 3
+    },
+    {
+      "id": "outdoor-kitchen",
+      "label": "Outdoor kitchen",
+      "category": "outdoor",
+      "priority": 2,
+      "listings": 2
+    },
+    {
+      "id": "patio",
+      "label": "Patio",
+      "category": "outdoor",
+      "priority": 2,
+      "listings": 6
+    },
+    {
+      "id": "pool",
+      "label": "Pool",
+      "category": "water",
+      "priority": 2,
+      "listings": 3
+    },
+    {
+      "id": "pool-table",
+      "label": "Pool table",
+      "category": "entertainment",
+      "priority": 2,
+      "listings": 2
+    },
+    {
+      "id": "resort-access",
+      "label": "Resort access",
+      "category": "building",
+      "priority": 2,
+      "listings": 10
+    },
+    {
+      "id": "saltwater-pool",
+      "label": "Saltwater pool",
+      "category": "water",
+      "priority": 2,
+      "listings": 2
+    },
+    {
+      "id": "shared-pool",
+      "label": "Shared pool",
+      "category": "water",
+      "priority": 2,
+      "listings": 4
+    },
+    {
+      "id": "smart-tv",
+      "label": "TV with streaming",
+      "category": "entertainment",
+      "priority": 2,
+      "listings": 31
+    },
+    {
+      "id": "washer-dryer",
+      "label": "Washer & dryer",
+      "category": "essentials",
+      "priority": 2,
+      "listings": 31
+    },
+    {
+      "id": "wifi",
+      "label": "Wi-Fi",
+      "category": "essentials",
+      "priority": 2,
+      "listings": 28
+    },
+    {
+      "id": "workspace",
+      "label": "Dedicated workspace",
+      "category": "comfort",
+      "priority": 2,
+      "listings": 9
+    },
+    {
+      "id": "amazon-prime",
+      "label": "Amazon Prime",
+      "category": "entertainment",
+      "priority": 3,
+      "listings": 2
+    },
+    {
+      "id": "beach-essentials",
+      "label": "Beach essentials",
+      "category": "outdoor",
+      "priority": 3,
+      "listings": 2
+    },
+    {
+      "id": "board-games",
+      "label": "Board games",
+      "category": "entertainment",
+      "priority": 3,
+      "listings": 3
+    },
+    {
+      "id": "books",
+      "label": "Books & reading material",
+      "category": "entertainment",
+      "priority": 3,
+      "listings": 3
+    },
+    {
+      "id": "ceiling-fans",
+      "label": "Ceiling fans",
+      "category": "essentials",
+      "priority": 3,
+      "listings": 10
+    },
+    {
+      "id": "childrens-books-toys",
+      "label": "Children's books & toys",
+      "category": "family",
+      "priority": 3,
+      "listings": 2
+    },
+    {
+      "id": "co-alarm",
+      "label": "Carbon monoxide alarm",
+      "category": "safety",
+      "priority": 3,
+      "listings": 1
+    },
+    {
+      "id": "coffee-maker",
+      "label": "Coffee maker",
+      "category": "kitchen",
+      "priority": 3,
+      "listings": 1
+    },
+    {
+      "id": "cooking-basics",
+      "label": "Cooking basics",
+      "category": "kitchen",
+      "priority": 3,
+      "listings": 7
+    },
+    {
+      "id": "drying-rack",
+      "label": "Drying rack",
+      "category": "essentials",
+      "priority": 3,
+      "listings": 1
+    },
+    {
+      "id": "dstv",
+      "label": "DStv",
+      "category": "entertainment",
+      "priority": 3,
+      "listings": 2
+    },
+    {
+      "id": "essentials",
+      "label": "Essentials (towels, linen, toiletries)",
+      "category": "essentials",
+      "priority": 3,
+      "listings": 22
+    },
+    {
+      "id": "ethernet",
+      "label": "Ethernet connection",
+      "category": "essentials",
+      "priority": 3,
+      "listings": 3
+    },
+    {
+      "id": "exercise-equipment",
+      "label": "Exercise equipment",
+      "category": "building",
+      "priority": 3,
+      "listings": 1
+    },
+    {
+      "id": "fire-extinguisher",
+      "label": "Fire extinguisher",
+      "category": "safety",
+      "priority": 3,
+      "listings": 9
+    },
+    {
+      "id": "first-aid",
+      "label": "First aid kit",
+      "category": "safety",
+      "priority": 3,
+      "listings": 2
+    },
+    {
+      "id": "garden-view",
+      "label": "Garden view",
+      "category": "views",
+      "priority": 3,
+      "listings": 3
+    },
+    {
+      "id": "hammock",
+      "label": "Hammock",
+      "category": "outdoor",
+      "priority": 3,
+      "listings": 1
+    },
+    {
+      "id": "heating",
+      "label": "Heating",
+      "category": "essentials",
+      "priority": 3,
+      "listings": 2
+    },
+    {
+      "id": "high-chair",
+      "label": "High chair",
+      "category": "family",
+      "priority": 3,
+      "listings": 2
+    },
+    {
+      "id": "lake-access",
+      "label": "Lake access",
+      "category": "water",
+      "priority": 3,
+      "listings": 1
+    },
+    {
+      "id": "laundromat-nearby",
+      "label": "Laundromat nearby",
+      "category": "nearby",
+      "priority": 3,
+      "listings": 1
+    },
+    {
+      "id": "mini-golf",
+      "label": "Mini golf",
+      "category": "entertainment",
+      "priority": 3,
+      "listings": 1
+    },
+    {
+      "id": "netflix",
+      "label": "Netflix",
+      "category": "entertainment",
+      "priority": 3,
+      "listings": 28
+    },
+    {
+      "id": "outdoor-dining",
+      "label": "Outdoor dining area",
+      "category": "outdoor",
+      "priority": 3,
+      "listings": 16
+    },
+    {
+      "id": "outdoor-furniture",
+      "label": "Outdoor furniture",
+      "category": "outdoor",
+      "priority": 3,
+      "listings": 16
+    },
+    {
+      "id": "outdoor-shower",
+      "label": "Outdoor shower",
+      "category": "outdoor",
+      "priority": 3,
+      "listings": 5
+    },
+    {
+      "id": "ping-pong",
+      "label": "Ping-pong table",
+      "category": "entertainment",
+      "priority": 3,
+      "listings": 1
+    },
+    {
+      "id": "pool-view",
+      "label": "Pool view",
+      "category": "views",
+      "priority": 3,
+      "listings": 2
+    },
+    {
+      "id": "private-entrance",
+      "label": "Private entrance",
+      "category": "building",
+      "priority": 3,
+      "listings": 22
+    },
+    {
+      "id": "room-darkening",
+      "label": "Room-darkening shades",
+      "category": "comfort",
+      "priority": 3,
+      "listings": 5
+    },
+    {
+      "id": "safe",
+      "label": "In-unit safe",
+      "category": "security",
+      "priority": 3,
+      "listings": 8
+    },
+    {
+      "id": "smoke-alarm",
+      "label": "Smoke alarm",
+      "category": "safety",
+      "priority": 3,
+      "listings": 2
+    },
+    {
+      "id": "sound-system",
+      "label": "Sound system",
+      "category": "entertainment",
+      "priority": 3,
+      "listings": 9
+    },
+    {
+      "id": "street-parking",
+      "label": "Free street parking",
+      "category": "parking",
+      "priority": 3,
+      "listings": 3
+    },
+    {
+      "id": "sun-loungers",
+      "label": "Sun loungers",
+      "category": "outdoor",
+      "priority": 3,
+      "listings": 11
+    },
+    {
+      "id": "valley-view",
+      "label": "Valley view",
+      "category": "views",
+      "priority": 3,
+      "listings": 1
+    },
+    {
+      "id": "walk-in-closet",
+      "label": "Walk-in closet",
+      "category": "comfort",
+      "priority": 3,
+      "listings": 1
+    },
+    {
+      "id": "window-guards",
+      "label": "Window guards",
+      "category": "family",
+      "priority": 3,
+      "listings": 3
+    }
+  ],
+  "services": [
+    {
+      "id": "host-greets",
+      "label": "Host greets you"
+    },
+    {
+      "id": "self-check-in",
+      "label": "Self check-in"
+    },
+    {
+      "id": "lockbox",
+      "label": "Lockbox"
+    },
+    {
+      "id": "luggage-dropoff",
+      "label": "Luggage drop-off"
+    },
+    {
+      "id": "housekeeping",
+      "label": "Housekeeping available"
+    },
+    {
+      "id": "long-stays",
+      "label": "Long stays welcome"
+    },
+    {
+      "id": "pets-allowed",
+      "label": "Pets allowed"
+    },
+    {
+      "id": "building-staff",
+      "label": "Building staff"
+    }
+  ],
+  "normalisationNotes": "Raw caption lines (e.g. 'Wifi', 'Unlimited WiFi', 'Tv with standard cable & WiFi') map to one canonical id via regex (scripts/build-data.py TAXONOMY). Prose-derived amenities carry source='description'.",
+  "unmappedRawLines": {
+    "DKKKlwFMPUd": [
+      "lockbox"
+    ],
+    "DPOFTO1DDLK": [
+      "lockbox"
+    ],
+    "DPqYxmxjCla": [
+      "lockbox"
+    ]
+  }
+}

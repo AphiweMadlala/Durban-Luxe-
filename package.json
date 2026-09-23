@@ -1,0 +1,14 @@
+{
+  "name": "durban-luxe-proposal",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "data": "python3 scripts/build-data.py",
+    "build": "node scripts/build-site.mjs",
+    "validate": "node scripts/validate.mjs",
+    "serve": "python3 -m http.server 4173 -d dist"
+  },
+  "devDependencies": {
+    "@phosphor-icons/core": "^2.1.1"
+  }
+}
