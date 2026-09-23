@@ -3,6 +3,7 @@
 // Env: BASE (default "/"; use "/Durban-Luxe-/" for a GitHub Pages project site)
 //      SITE_URL (absolute origin + base, for canonical/sitemap; default http://localhost:4173/)
 //      PROPOSAL_MODE ("false" to disable; default true -> noindex + robots Disallow)
+//      OUT_DIR (default "dist"; "docs" for the GitHub Pages branch deploy, see npm run deploy)
 import { readFileSync, writeFileSync, mkdirSync, rmSync, cpSync, existsSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -12,7 +13,7 @@ import { property } from '../templates/property.mjs';
 import { about, enquire, notFound } from '../templates/pages.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const DIST = path.join(ROOT, 'dist');
+const DIST = path.join(ROOT, process.env.OUT_DIR || 'dist');
 const read = (f) => JSON.parse(readFileSync(path.join(ROOT, 'data', f), 'utf8'));
 
 export const PROPOSAL_MODE = process.env.PROPOSAL_MODE !== 'false';
@@ -82,4 +83,4 @@ out('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http:
 out('robots.txt', PROPOSAL_MODE ? 'User-agent: *\nDisallow: /\n' : `User-agent: *\nAllow: /\nSitemap: ${siteUrl}sitemap.xml\n`);
 out('.nojekyll', '');
 
-console.log(`Built ${urls.length + 1} pages into dist/ (base=${base}, proposalMode=${PROPOSAL_MODE})`);
+console.log(`Built ${urls.length + 1} pages into ${path.relative(ROOT, DIST)}/ (base=${base}, proposalMode=${PROPOSAL_MODE})`);

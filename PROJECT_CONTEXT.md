@@ -14,7 +14,7 @@ node scripts/qa.mjs --shots     # browser sweep (needs Playwright's Chromium)
 node scripts/qa-interactions.mjs
 ```
 
-GitHub Pages project site: `BASE=/Durban-Luxe-/ SITE_URL=https://<user>.github.io/Durban-Luxe-/ npm run build`, then publish `dist/`.
+**Deploying (GitHub Pages, from a branch):** `npm run deploy` builds the site into `docs/` with the `/Durban-Luxe-/` base path. Commit `docs/` and push `main`; Pages is set to **Deploy from a branch → main → /docs**. `dist/` stays a local, uncommitted preview build (`npm run build && npm run serve`).
 
 ## 1. Source hierarchy
 

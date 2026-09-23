@@ -6,7 +6,8 @@
     "data": "python3 scripts/build-data.py",
     "build": "node scripts/build-site.mjs",
     "validate": "node scripts/validate.mjs",
-    "serve": "python3 -m http.server 4173 -d dist"
+    "serve": "python3 -m http.server 4173 -d dist",
+    "deploy": "OUT_DIR=docs BASE=/Durban-Luxe-/ SITE_URL=https://aphiwemadlala.github.io/Durban-Luxe-/ node scripts/build-site.mjs && touch docs/.nojekyll"
   },
   "devDependencies": {
     "@phosphor-icons/core": "^2.1.1"
